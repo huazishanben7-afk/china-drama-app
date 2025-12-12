@@ -1,14 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { Search, Sparkles, BookOpen, Tv, Loader2, AlertTriangle } from 'lucide-react';
+import { Search, Sparkles, BookOpen, Loader2, AlertTriangle } from 'lucide-react';
 import { SearchResult } from '@/lib/types';
 
 export default function Home() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [result, setResult] = useState<SearchResult | null>(null);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null); // エラー表示用
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,14 +27,11 @@ export default function Home() {
       
       const data = await response.json();
 
-      // ここでエラーチェックを追加！
       if (!response.ok || data.error) {
         throw new Error(data.error || 'サーバーエラーが発生しました');
       }
       
-      // データ形式の安全確認
       if (!data.items || !Array.isArray(data.items)) {
-         // itemsがない場合は空配列として扱うかエラーにする
          setResult({ type: 'search', items: [] });
       } else {
          setResult(data);
@@ -75,9 +72,9 @@ export default function Home() {
             診断
           </button>
         </form>
-{/* 広告エリア */}
+
+        {/* 広告エリア */}
         <div className="mt-8 mb-8 text-center">
-          {/* ↓ この1行があれば、誰が見ても広告だと分かるので完璧です */}
           <p className="text-xs text-slate-400 mb-1">- PR -</p>
           
           <a 
@@ -86,16 +83,14 @@ export default function Home() {
             rel="noopener noreferrer"
             className="inline-block hover:opacity-90 transition-opacity"
           >
-            {/* ↓ Amazonの商品画像のURLを入れます */}
             <img 
               src="https://m.media-amazon.com/images/I/61jhW7Vi2SL._AC_SL1500_.jpg" 
               alt="Amazonおすすめ商品" 
               className="max-w-full h-auto rounded-lg shadow-md border border-slate-200"
-              style={{ maxHeight: '200px' }} // 画像がデカすぎないように制限
+              style={{ maxHeight: '200px' }}
             />
           </a>
           
-          {/* 商品名などを出したい場合はここに書く */}
           <p className="text-xs text-slate-500 mt-1">
             ドラマ視聴に最適！Fire TV Stick 4K
           </p>
@@ -103,7 +98,6 @@ export default function Home() {
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-12">
-        {/* エラーがあれば表示するエリア */}
         {errorMsg && (
           <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded shadow-sm flex items-center gap-3">
             <AlertTriangle />
@@ -140,30 +134,32 @@ export default function Home() {
                       <p className="text-slate-600 text-sm mt-1">{item.reason}</p>
                     </div>
 
-                    <div className="flex gap-3 mt-4">
+                    <div className="flex flex-col gap-3 mt-4">
+                      {/* 1. Amazonボタン（上に配置） */}
+                      <a
+                        href={item.drama.affiliate_link ? item.drama.affiliate_link : `https://www.amazon.co.jp/s?k=${encodeURIComponent(item.drama.title)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`block w-full text-center py-3 rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 ${
+                          item.drama.affiliate_link 
+                            ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white" 
+                            : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                        }`}
+                      >
+                        {item.drama.affiliate_link ? "今すぐ観る" : "Amazonで探す"}
+                      </a>
+
+                      {/* 2. ブログボタン（下に配置） */}
                       <a 
-                        // ここを変更！CSVのURLを使わず、タイトルでブログ内検索をするURLを動的に作ります
-  			href={`https://poupe.hatenadiary.jp/search?q=${encodeURIComponent(item.drama.title)}`} 
+                        href={item.drama.blog_url} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 bg-slate-800 text-white py-2.5 rounded-lg font-bold hover:bg-slate-700 transition-colors text-sm"
+                        className="flex items-center justify-center gap-2 bg-slate-800 text-white py-2.5 rounded-lg font-bold hover:bg-slate-700 transition-colors text-sm"
                       >
                         <BookOpen size={16} />
                         ブログで感想を読む
                       </a>
-                      
-<a
-                  href={drama.affiliate_link ? drama.affiliate_link : `https://www.amazon.co.jp/s?k=${encodeURIComponent(drama.title)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`block w-full text-center py-3 rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 mb-2 ${
-                    drama.affiliate_link 
-                      ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white" 
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                  }`}
-                >
-                  {drama.affiliate_link ? "今すぐ観る" : "Amazonで探す"}
-                </a>                    </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -175,7 +171,7 @@ export default function Home() {
           </div>
         )}
       </div>
-{/* フッター（PR表記・Amazon免責） */}
+
       <footer className="py-8 text-center text-xs text-slate-400 border-t border-slate-200 mt-12 bg-slate-50">
         <p className="mb-1">当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています。</p>
         <p>Amazonのアソシエイトとして、適格販売により収入を得ています。</p>
