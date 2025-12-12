@@ -58,12 +58,14 @@ export default function Home() {
 
       <div className="max-w-2xl mx-auto px-4 -mt-6">
 <form onSubmit={handleSearch} className="bg-white p-4 rounded-lg shadow-lg flex flex-col sm:flex-row gap-3 border border-slate-200">
-          <input
+<input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="ドラマ名、または今の気分（例：泣ける時代劇）"
-            className="flex-1 p-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-800"
+            // ▼ 修正1：文章を「ドラマ名や今の気分…」に短縮して入るようにしました
+            placeholder="ドラマ名や今の気分（例：泣ける時代劇）"
+            // ▼ 修正2：スマホ用に文字サイズ(text-sm)と余白(p-2)を小さく調整
+            className="flex-1 text-sm sm:text-base p-2 sm:p-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-800 w-full"
           />
           <button 
             type="submit" 
