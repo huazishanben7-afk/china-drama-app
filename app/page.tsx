@@ -75,6 +75,31 @@ export default function Home() {
             診断
           </button>
         </form>
+{/* 広告エリア */}
+        <div className="mt-8 mb-8 text-center">
+          {/* ↓ この1行があれば、誰が見ても広告だと分かるので完璧です */}
+          <p className="text-xs text-slate-400 mb-1">- PR -</p>
+          
+          <a 
+            href="【Amazonのアフィリエイトリンク】" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block hover:opacity-90 transition-opacity"
+          >
+            {/* ↓ Amazonの商品画像のURLを入れます */}
+            <img 
+              src="【画像URL】" 
+              alt="Amazonおすすめ商品" 
+              className="max-w-full h-auto rounded-lg shadow-md border border-slate-200"
+              style={{ maxHeight: '200px' }} // 画像がデカすぎないように制限
+            />
+          </a>
+          
+          {/* 商品名などを出したい場合はここに書く */}
+          <p className="text-xs text-slate-500 mt-1">
+            ドラマ視聴に最適！Fire TV Stick 4K
+          </p>
+        </div>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 py-12">
