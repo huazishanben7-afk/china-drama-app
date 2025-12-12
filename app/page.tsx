@@ -51,7 +51,13 @@ export default function Home() {
     <main className="min-h-screen bg-slate-50 text-slate-800 font-sans">
       <div className="bg-red-900 text-amber-50 py-8 px-4 shadow-md border-b-4 border-amber-600">
         <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-3xl font-bold mb-2 tracking-wider">中国ドラマ コンシェルジュ</h1>
+          {/* ▼修正：スマホ(sm未満)では改行し、PCではスペースを表示するように変更 */}
+          <h1 className="text-3xl font-bold mb-2 tracking-wider">
+            中国ドラマ
+            <br className="block sm:hidden" />
+            <span className="hidden sm:inline"> </span>
+            コンシェルジュ
+          </h1>
           <p className="text-red-200">1万記事の中から、あなたにぴったりの作品をご案内します</p>
         </div>
       </div>
