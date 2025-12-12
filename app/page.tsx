@@ -152,18 +152,18 @@ export default function Home() {
                         ブログで感想を読む
                       </a>
                       
-                      {item.drama.affiliate_link && (
-                        <a 
-                          href={item.drama.affiliate_link}
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-pink-600 text-white py-2.5 rounded-lg font-bold hover:opacity-90 transition-opacity text-sm"
-                        >
-                          <Tv size={16} />
-                          今すぐ観る
-                        </a>
-                      )}
-                    </div>
+<a
+                  href={drama.affiliate_link ? drama.affiliate_link : `https://www.amazon.co.jp/s?k=${encodeURIComponent(drama.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block w-full text-center py-3 rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 mb-2 ${
+                    drama.affiliate_link 
+                      ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white" 
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  {drama.affiliate_link ? "今すぐ観る" : "Amazonで探す"}
+                </a>                    </div>
                   </div>
                 </div>
               ))}
