@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/google": "^2.0.45",
+    "@vercel/analytics": "^1.6.1",
     "ai": "^5.0.110",
     "lucide-react": "^0.559.0",
     "next": "16.0.8",

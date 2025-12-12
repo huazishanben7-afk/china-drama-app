@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { Search, Sparkles, BookOpen, Loader2, AlertTriangle } from 'lucide-react';
 import { SearchResult } from '@/lib/types';
-// import { Analytics } from "@vercel/analytics/react";
+// ▼Analyticsを有効化しました
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   const [input, setInput] = useState('');
@@ -146,7 +147,6 @@ export default function Home() {
                         {item.drama.affiliate_link ? "今すぐ観る" : "Amazonで探す"}
                       </a>
 
-                      {/* ▼ ここをご指摘通り修正しました */}
                       <a 
                         href={`https://poupe.hatenadiary.jp/search?q=${encodeURIComponent(item.drama.title)}`}
                         target="_blank" 
@@ -174,6 +174,9 @@ export default function Home() {
         <p>Amazonのアソシエイトとして、適格販売により収入を得ています。</p>
         <p className="mt-4">&copy; 中国ドラマ コンシェルジュ</p>
       </footer>
+      
+      {/* ▼ここにAnalyticsコンポーネントを追加 */}
+      <Analytics />
     </main>
   );
 }
