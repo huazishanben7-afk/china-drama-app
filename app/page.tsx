@@ -63,20 +63,26 @@ export default function Home() {
     }
   };
 
-  // ▼【修正箇所】文字化け対策をした検索URL生成関数
+  // ブログ検索URL生成関数（文字化け対策強化版）
   const getBlogSearchUrl = (title: string) => {
     if (!title) return 'https://poupe.hatenadiary.jp/';
     
-    // 1. 文字化けの原因になりやすい「～」「〜」などの記号をスペースに置換
-    // 2. 連続するスペースを1つにまとめる
-    // 3. 前後の空白を削除
+    // 特殊文字や記号を削除してシンプルなタイトルにする
     const cleanTitle = title
-      .replace(/[～〜\-\–\—]/g, ' ') 
-      .replace(/[\[\]【】()（）]/g, ' ') 
-      .replace(/\s+/g, ' ')
+      .replace(/[～〜\-\–\—]/g, ' ')           // ダッシュ類をスペースに
+      .replace(/[\[\]【】()（）『』「」]/g, ' ')  // 括弧類をスペースに
+      .replace(/[第話感想ネタバレあらすじ総括]/g, ' ') // 不要なキーワードを削除
+      .replace(/\s+/g, ' ')                     // 連続スペースを1つに
       .trim();
 
-    return `https://poupe.hatenadiary.jp/search?q=${encodeURIComponent(cleanTitle)}`;
+    // エンコード
+    const encoded = encodeURIComponent(cleanTitle);
+    
+    console.log('Original:', title);
+    console.log('Cleaned:', cleanTitle);
+    console.log('Encoded:', encoded);
+    
+    return `https://poupe.hatenadiary.jp/search?q=${encoded}`;
   };
 
   return (
