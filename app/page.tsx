@@ -50,6 +50,22 @@ export default function Home() {
     }
   };
 
+  // ▼【修正箇所】文字化け対策をした検索URL生成関数
+  const getBlogSearchUrl = (title: string) => {
+    if (!title) return 'https://poupe.hatenadiary.jp/';
+    
+    // 1. 文字化けの原因になりやすい「～」「〜」などの記号をスペースに置換
+    // 2. 連続するスペースを1つにまとめる
+    // 3. 前後の空白を削除
+    const cleanTitle = title
+      .replace(/[～〜\-\–\—]/g, ' ') 
+      .replace(/[\[\]【】()（）]/g, ' ') 
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    return `https://poupe.hatenadiary.jp/search?q=${encodeURIComponent(cleanTitle)}`;
+  };
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-800 font-sans">
       <div className="bg-red-900 text-amber-50 py-8 px-4 shadow-md border-b-4 border-amber-600">
@@ -154,9 +170,9 @@ export default function Home() {
                         {item.drama.affiliate_link ? "今すぐ観る" : "Amazonで探す"}
                       </a>
 
-                      {/* 2. ブログボタン */}
+                      {/* 2. ブログボタン（ここを修正版関数を使用するように変更） */}
                       <a 
-                        href={`https://poupe.hatenadiary.jp/search?q=${encodeURIComponent(item.drama.title)}`}
+                        href={getBlogSearchUrl(item.drama.title)}
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2 bg-slate-800 text-white py-2.5 rounded-lg font-bold hover:bg-slate-700 transition-colors text-sm"
