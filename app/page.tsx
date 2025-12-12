@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Search, Sparkles, BookOpen, Loader2, AlertTriangle } from 'lucide-react';
 import { SearchResult } from '@/lib/types';
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   const [input, setInput] = useState('');
@@ -64,119 +65,4 @@ export default function Home() {
             className="flex-1 p-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-800"
           />
           <button 
-            type="submit" 
-            disabled={isLoading}
-            className="bg-red-800 text-white px-6 py-3 rounded-md font-bold hover:bg-red-900 transition-colors flex items-center gap-2 disabled:opacity-50"
-          >
-            {isLoading ? <Loader2 className="animate-spin" /> : <Search size={20} />}
-            診断
-          </button>
-        </form>
-
-        {/* 広告エリア */}
-        <div className="mt-8 mb-8 text-center">
-          <p className="text-xs text-slate-400 mb-1">- PR -</p>
-          
-          <a 
-            href="https://amzn.to/3MzbRpI" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block hover:opacity-90 transition-opacity"
-          >
-            <img 
-              src="https://m.media-amazon.com/images/I/61jhW7Vi2SL._AC_SL1500_.jpg" 
-              alt="Amazonおすすめ商品" 
-              className="max-w-full h-auto rounded-lg shadow-md border border-slate-200"
-              style={{ maxHeight: '200px' }}
-            />
-          </a>
-          
-          <p className="text-xs text-slate-500 mt-1">
-            ドラマ視聴に最適！Fire TV Stick 4K
-          </p>
-        </div>
-      </div>
-
-      <div className="max-w-3xl mx-auto px-4 py-12">
-        {errorMsg && (
-          <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded shadow-sm flex items-center gap-3">
-            <AlertTriangle />
-            <div>
-              <p className="font-bold">エラーが発生しました</p>
-              <p className="text-sm">{errorMsg}</p>
-            </div>
-          </div>
-        )}
-
-        {result && result.items && (
-          <div className="animate-fade-in">
-            <div className="flex items-center gap-2 mb-6 justify-center text-slate-500">
-              {result.type === 'ai' ? (
-                <><Sparkles className="text-yellow-500" /> <span>AIがあなたの気分に合わせて選びました</span></>
-              ) : (
-                <><Search className="text-blue-500" /> <span>タイトル検索結果</span></>
-              )}
-            </div>
-
-            <div className="space-y-6">
-              {result.items.map((item, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden border border-slate-100 hover:shadow-lg transition-shadow">
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <h2 className="text-xl font-bold text-red-900">{item.drama.title}</h2>
-                      {item.drama.image_url && (
-                        <div className="w-16 h-16 bg-slate-200 rounded-md bg-cover bg-center" style={{backgroundImage: `url(${item.drama.image_url})`}} />
-                      )}
-                    </div>
-                    
-                    <div className="bg-yellow-50 p-4 rounded-lg mb-4 border-l-4 border-yellow-400">
-                      <p className="text-slate-700 font-medium">💡 おすすめポイント</p>
-                      <p className="text-slate-600 text-sm mt-1">{item.reason}</p>
-                    </div>
-
-                    <div className="flex flex-col gap-3 mt-4">
-                      {/* 1. Amazonボタン（上に配置） */}
-                      <a
-                        href={item.drama.affiliate_link ? item.drama.affiliate_link : `https://www.amazon.co.jp/s?k=${encodeURIComponent(item.drama.title)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`block w-full text-center py-3 rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 ${
-                          item.drama.affiliate_link 
-                            ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white" 
-                            : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                        }`}
-                      >
-                        {item.drama.affiliate_link ? "今すぐ観る" : "Amazonで探す"}
-                      </a>
-
-                      {/* 2. ブログボタン（下に配置） */}
-                      <a 
-                        href={item.drama.blog_url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 bg-slate-800 text-white py-2.5 rounded-lg font-bold hover:bg-slate-700 transition-colors text-sm"
-                      >
-                        <BookOpen size={16} />
-                        ブログで感想を読む
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {result.items.length === 0 && (
-               <p className="text-center text-slate-500">該当するドラマが見つかりませんでした。</p>
-            )}
-          </div>
-        )}
-      </div>
-
-      <footer className="py-8 text-center text-xs text-slate-400 border-t border-slate-200 mt-12 bg-slate-50">
-        <p className="mb-1">当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています。</p>
-        <p>Amazonのアソシエイトとして、適格販売により収入を得ています。</p>
-        <p className="mt-4">&copy; 中国ドラマ コンシェルジュ</p>
-      </footer>
-    </main>
-  );
-}
+            type="submit
