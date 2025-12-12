@@ -3,8 +3,7 @@
 import { useState } from 'react';
 import { Search, Sparkles, BookOpen, Loader2, AlertTriangle } from 'lucide-react';
 import { SearchResult } from '@/lib/types';
-// Analyticsが不要なら削除、必要ならコメントアウトを外してください
-import { Analytics } from "@vercel/analytics/react";
+// import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   const [input, setInput] = useState('');
@@ -75,10 +74,8 @@ export default function Home() {
           </button>
         </form>
 
-        {/* 広告エリア */}
         <div className="mt-8 mb-8 text-center">
           <p className="text-xs text-slate-400 mb-1">- PR -</p>
-          
           <a 
             href="https://amzn.to/3MzbRpI" 
             target="_blank" 
@@ -92,7 +89,6 @@ export default function Home() {
               style={{ maxHeight: '200px' }}
             />
           </a>
-          
           <p className="text-xs text-slate-500 mt-1">
             ドラマ視聴に最適！Fire TV Stick 4K
           </p>
@@ -137,7 +133,6 @@ export default function Home() {
                     </div>
 
                     <div className="flex flex-col gap-3 mt-4">
-                      {/* 1. Amazonボタン */}
                       <a
                         href={item.drama.affiliate_link ? item.drama.affiliate_link : `https://www.amazon.co.jp/s?k=${encodeURIComponent(item.drama.title)}`}
                         target="_blank"
@@ -151,8 +146,7 @@ export default function Home() {
                         {item.drama.affiliate_link ? "今すぐ観る" : "Amazonで探す"}
                       </a>
 
-                      {/* 2. ブログボタン */}
-                      {/* ここだけ修正：バッククォートにして変数を埋め込めるように戻しました */}
+                      {/* ▼ ここをご指摘通り修正しました */}
                       <a 
                         href={`https://poupe.hatenadiary.jp/search?q=${encodeURIComponent(item.drama.title)}`}
                         target="_blank" 
