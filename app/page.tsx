@@ -57,7 +57,7 @@ export default function Home() {
       </div>
 
       <div className="max-w-2xl mx-auto px-4 -mt-6">
-        <form onSubmit={handleSearch} className="bg-white p-4 rounded-lg shadow-lg flex gap-2 border border-slate-200">
+<form onSubmit={handleSearch} className="bg-white p-4 rounded-lg shadow-lg flex flex-col sm:flex-row gap-3 border border-slate-200">
           <input
             type="text"
             value={input}
@@ -68,7 +68,7 @@ export default function Home() {
           <button 
             type="submit" 
             disabled={isLoading}
-            className="bg-red-800 text-white px-6 py-3 rounded-md font-bold hover:bg-red-900 transition-colors flex items-center gap-2 disabled:opacity-50"
+            className="bg-red-800 text-white px-6 py-3 rounded-md font-bold hover:bg-red-900 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 w-full sm:w-auto"
           >
             {isLoading ? <Loader2 className="animate-spin" /> : <Search size={20} />}
             診断
