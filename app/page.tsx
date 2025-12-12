@@ -38,9 +38,13 @@ export default function Home() {
          setResult(data);
       }
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
-      setErrorMsg(error.message || '予期せぬエラーが発生しました');
+      if (error instanceof Error) {
+        setErrorMsg(error.message);
+      } else {
+        setErrorMsg('予期せぬエラーが発生しました');
+      }
     } finally {
       setIsLoading(false);
     }
@@ -150,7 +154,7 @@ export default function Home() {
                         {item.drama.affiliate_link ? "今すぐ観る" : "Amazonで探す"}
                       </a>
 
-                      {/* 2. ブログボタン：【修正完了】ここを正しい記号（バッククォート）に直しました！ */}
+                      {/* 2. ブログボタン */}
                       <a 
                         href={`https://poupe.hatenadiary.jp/search?q=${encodeURIComponent(item.drama.title)}`}
                         target="_blank" 
