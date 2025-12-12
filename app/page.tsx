@@ -81,14 +81,14 @@ export default function Home() {
           <p className="text-xs text-slate-400 mb-1">- PR -</p>
           
           <a 
-            href="【Amazonのアフィリエイトリンク】" 
+            href="https://amzn.to/3MzbRpI" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block hover:opacity-90 transition-opacity"
           >
             {/* ↓ Amazonの商品画像のURLを入れます */}
             <img 
-              src="【画像URL】" 
+              src="https://m.media-amazon.com/images/I/61jhW7Vi2SL._AC_SL1500_.jpg" 
               alt="Amazonおすすめ商品" 
               className="max-w-full h-auto rounded-lg shadow-md border border-slate-200"
               style={{ maxHeight: '200px' }} // 画像がデカすぎないように制限
