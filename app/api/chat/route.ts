@@ -31,8 +31,8 @@ export async function POST(req: Request) {
       ユーザーは次の気分や要望を持っています: "${message}"
       以下のドラマリストから、このユーザーに最もおすすめの3作品を選んでください。
       
-      [ドラマリスト]
-      ${JSON.stringify(allDramas.map(d => ({ title: d.title, mood: d.mood_text })))}
+     [ドラマリスト]
+      ${allDramas.map(d => d.title).join(', ')}
     `;
 
     // ★ここを、あなたのリストにあった 'gemini-2.5-flash' に変更！
