@@ -35,9 +35,9 @@ export async function POST(req: Request) {
       ${allDramas.map(d => d.title).join(', ')}
     `;
 
-    // ★ここを、あなたのリストにあった 'gemini-1.5-flash' に変更！
+    // ★ここを、あなたのリストにあった 'gemini-2.5-flash' に変更！
     const { object } = await generateObject({
-      model: google('gemini-1.5-flash', { model: 'gemini-1.5-flash' }), 
+      model: google('gemini-2.5-flash'), 
       schema: z.object({
         recommendations: z.array(z.object({
           title: z.string(),
