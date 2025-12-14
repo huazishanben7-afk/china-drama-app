@@ -37,7 +37,7 @@ export async function POST(req: Request) {
 
     // ★ここを、あなたのリストにあった 'gemini-1.5-flash' に変更！
     const { object } = await generateObject({
-      model: google('gemini-1.5-flash'), 
+      model: google('gemini-1.5-flash', { model: 'gemini-1.5-flash' }), 
       schema: z.object({
         recommendations: z.array(z.object({
           title: z.string(),
