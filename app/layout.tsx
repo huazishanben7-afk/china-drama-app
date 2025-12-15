@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "中国ドラマ コンシェルジュ | AIがおすすめ作品を診断",
-  description: "「次に見るドラマが決まらない…」を解決！今の気分を入力するだけで、1万記事のデータからAIがあなたにぴったりの中国ドラマを厳選して提案します。",
+  title: "中国ドラマ コンシェルジュ | おすすめ作品を診断",
+  description: "「次に見るドラマが決まらない…」を解決！診断ガチャで新しいドラマに出会おえます！",
 };
 
 export default function RootLayout({
