@@ -231,6 +231,7 @@ export default function Home() {
                    ドラマデータを読み込んでいます...
                  </div>
               ) : (
+<>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
                   <button
                     onClick={() => handleTagSelect(tagOptions[0])}
@@ -264,6 +265,17 @@ export default function Home() {
                     {selectedTag === tagOptions[1] ? '診断中...' : tagOptions[1]}
                   </button>
                 </div>
+<div className="mt-6 text-center">
+                  <button
+                    onClick={selectRandomTags}
+                    disabled={isProcessing}
+                    className="bg-white border border-slate-300 text-slate-600 text-sm flex items-center justify-center gap-2 mx-auto hover:border-red-400 hover:text-red-800 hover:bg-red-50 py-3 px-6 rounded-full shadow-sm transition-all disabled:opacity-50 font-bold"
+                  >
+                    <RefreshCw size={16} />
+                    違うタグにする
+                  </button>
+                </div>
+</>
               )}
             </div>
           )}
