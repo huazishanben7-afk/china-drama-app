@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search, Sparkles, BookOpen, Loader2, RefreshCw, AlertTriangle } from 'lucide-react';
+import Link from 'next/link';
+import { Search, Sparkles, BookOpen, Loader2, RefreshCw, AlertTriangle, Tv } from 'lucide-react';
 import { Analytics } from "@vercel/analytics/react";
 
 // ドラマデータの型定義
@@ -24,11 +25,11 @@ export default function Home() {
   const [tagOptions, setTagOptions] = useState<[string, string]>(['', '']);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [showResult, setShowResult] = useState(false); 
+  const [showResult, setShowResult] = useState(false);
 
   // 利用可能なタグリスト
   const availableTags = [
-    '秘密', 'ミステリー', '宮廷', '胸キュン', 'ドロドロ', 
+    '秘密', 'ミステリー', '宮廷', '胸キュン', 'ドロドロ',
     'アクション', '時代劇', '現代劇', '復讐', '三角関係',
     '泣ける', '笑える', '癒し', 'サスペンス', 'イケメン',
     '記憶喪失', 'ファンタジー', 'ラブコメ', '溺愛', 'ホラー',
@@ -45,16 +46,16 @@ export default function Home() {
     const loadDramas = async () => {
       try {
         const response = await fetch('/data/drama_database_v2.csv');
-        
+
         if (!response.ok) {
           throw new Error(`CSVが見つかりません: ${response.status}`);
         }
 
         const csvText = await response.text();
-        
+
         // 改行で分割し、空行を除去
         const lines = csvText.split(/\r?\n/).filter(line => line.trim() !== '');
-        
+
         // ヘッダー行(1行目)を除外して処理
         const parsedDramas: Drama[] = lines.slice(1).map(line => {
           // 単純にカンマで分割
@@ -65,7 +66,7 @@ export default function Home() {
 
           // ★列の順番変更に対応（タグを最後に持ってくる変更は維持）
           // 0:タイトル, 1:ブログURL, 2:アフィリエイト, 3:画像, 4以降:タグ
-          
+
           const title = clean(rawValues[0]);
           const blog_url = clean(rawValues[1]);
           const affiliate_link = clean(rawValues[2]);
@@ -73,8 +74,8 @@ export default function Home() {
 
           // 5列目(index 4)以降はすべて結合してタグとみなす
           const moodParts = rawValues.slice(4).map(v => clean(v));
-          const mood_text = moodParts.join(','); 
-          
+          const mood_text = moodParts.join(',');
+
           return {
             title: title || '',
             mood_text: mood_text || '',
@@ -83,7 +84,7 @@ export default function Home() {
             image_url: image_url || undefined
           };
         });
-        
+
         setDramas(parsedDramas);
       } catch (error: any) {
         console.error('CSV読み込みエラー:', error);
@@ -118,7 +119,7 @@ export default function Home() {
 
     try {
       const normalizedQuery = query.toLowerCase().trim();
-      
+
       const results = dramas.filter(drama => {
         const titleMatch = drama.title && drama.title.toLowerCase().includes(normalizedQuery);
         const moodMatch = drama.mood_text && drama.mood_text.toLowerCase().includes(normalizedQuery);
@@ -144,7 +145,7 @@ export default function Home() {
     await new Promise(resolve => setTimeout(resolve, 600));
 
     executeLocalSearch(tag);
-    
+
     setIsProcessing(false);
     setShowResult(true);
   };
@@ -154,9 +155,9 @@ export default function Home() {
     e.preventDefault();
     if (!input.trim()) return;
 
-    setSelectedTag(null); 
-    setShowResult(true); 
-    
+    setSelectedTag(null);
+    setShowResult(true);
+
     executeLocalSearch(input);
   };
 
@@ -181,7 +182,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-800 font-sans">
-      <div className="bg-red-900 text-amber-50 py-8 px-4 shadow-md border-b-4 border-amber-600">
+      <div className="bg-red-900 text-amber-50 pt-8 pb-16 px-4 shadow-md border-b-4 border-amber-600">
         <div className="max-w-2xl mx-auto text-center">
           <h1 className="text-3xl font-bold mb-2 tracking-wider">
             中国ドラマ
@@ -189,7 +190,11 @@ export default function Home() {
             <span className="hidden sm:inline"> </span>
             コンシェルジュ
           </h1>
-          <p className="text-red-200">1万記事の中から、あなたにぴったりの作品をご案内します</p>
+          <p className="text-red-200 mb-4">1万記事の中から、あなたにぴったりの作品をご案内します</p>
+          <Link href="/schedule" className="inline-flex items-center gap-2 bg-amber-500 text-red-900 px-6 py-2 rounded-full font-bold shadow-lg hover:bg-amber-400 transition-colors">
+            <Tv size={18} />
+            放送予定を見る
+          </Link>
         </div>
       </div>
 
@@ -202,8 +207,8 @@ export default function Home() {
             placeholder="ドラマ名を入力"
             className="flex-1 text-sm sm:text-base p-2 sm:p-3 border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-800 w-full"
           />
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={isLoading}
             className="bg-red-800 text-white px-6 py-3 rounded-md font-bold hover:bg-red-900 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 w-full sm:w-auto"
           >
@@ -226,69 +231,66 @@ export default function Home() {
               </h2>
 
               {isLoading ? (
-                 <div className="text-center py-4 text-slate-500 text-sm">
-                   <Loader2 className="animate-spin mx-auto mb-2" />
-                   ドラマデータを読み込んでいます...
-                 </div>
+                <div className="text-center py-4 text-slate-500 text-sm">
+                  <Loader2 className="animate-spin mx-auto mb-2" />
+                  ドラマデータを読み込んでいます...
+                </div>
               ) : (
-<>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
-                  <button
-                    onClick={() => handleTagSelect(tagOptions[0])}
-                    disabled={isProcessing}
-                    className={`flex-1 py-4 px-2 rounded-xl font-bold text-lg shadow-sm transition-all ${
-                      selectedTag === tagOptions[0]
+                <>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
+                    <button
+                      onClick={() => handleTagSelect(tagOptions[0])}
+                      disabled={isProcessing}
+                      className={`flex-1 py-4 px-2 rounded-xl font-bold text-lg shadow-sm transition-all ${selectedTag === tagOptions[0]
                         ? 'bg-red-200 border-2 border-red-400 text-red-900 scale-105'
                         : selectedTag === tagOptions[1]
-                        ? 'bg-red-50 border-2 border-red-100 text-red-400 opacity-50 cursor-not-allowed'
-                        : 'bg-red-50 border-2 border-red-100 text-red-800 hover:bg-red-100 hover:border-red-300 hover:scale-105'
-                    }`}
-                  >
-                    {selectedTag === tagOptions[0] ? '診断中...' : tagOptions[0]}
-                  </button>
-                  
-                  <div className="flex items-center justify-center text-slate-400 font-bold text-sm">
-                    OR
-                  </div>
+                          ? 'bg-red-50 border-2 border-red-100 text-red-400 opacity-50 cursor-not-allowed'
+                          : 'bg-red-50 border-2 border-red-100 text-red-800 hover:bg-red-100 hover:border-red-300 hover:scale-105'
+                        }`}
+                    >
+                      {selectedTag === tagOptions[0] ? '診断中...' : tagOptions[0]}
+                    </button>
 
-                  <button
-                    onClick={() => handleTagSelect(tagOptions[1])}
-                    disabled={isProcessing}
-                    className={`flex-1 py-4 px-2 rounded-xl font-bold text-lg shadow-sm transition-all ${
-                      selectedTag === tagOptions[1]
+                    <div className="flex items-center justify-center text-slate-400 font-bold text-sm">
+                      OR
+                    </div>
+
+                    <button
+                      onClick={() => handleTagSelect(tagOptions[1])}
+                      disabled={isProcessing}
+                      className={`flex-1 py-4 px-2 rounded-xl font-bold text-lg shadow-sm transition-all ${selectedTag === tagOptions[1]
                         ? 'bg-blue-200 border-2 border-blue-400 text-blue-900 scale-105'
                         : selectedTag === tagOptions[0]
-                        ? 'bg-blue-50 border-2 border-blue-100 text-blue-400 opacity-50 cursor-not-allowed'
-                        : 'bg-blue-50 border-2 border-blue-100 text-blue-800 hover:bg-blue-100 hover:border-blue-300 hover:scale-105'
-                    }`}
-                  >
-                    {selectedTag === tagOptions[1] ? '診断中...' : tagOptions[1]}
-                  </button>
-                </div>
-<div className="mt-6 text-center">
-                  <button
-                    onClick={selectRandomTags}
-                    disabled={isProcessing}
-                    className="bg-white border border-slate-300 text-slate-600 text-sm flex items-center justify-center gap-2 mx-auto hover:border-red-400 hover:text-red-800 hover:bg-red-50 py-3 px-6 rounded-full shadow-sm transition-all disabled:opacity-50 font-bold"
-                  >
-                    <RefreshCw size={16} />
-                    違うタグにする
-                  </button>
-                </div>
-</>
+                          ? 'bg-blue-50 border-2 border-blue-100 text-blue-400 opacity-50 cursor-not-allowed'
+                          : 'bg-blue-50 border-2 border-blue-100 text-blue-800 hover:bg-blue-100 hover:border-blue-300 hover:scale-105'
+                        }`}
+                    >
+                      {selectedTag === tagOptions[1] ? '診断中...' : tagOptions[1]}
+                    </button>
+                  </div>
+                  <div className="mt-6 text-center">
+                    <button
+                      onClick={selectRandomTags}
+                      disabled={isProcessing}
+                      className="bg-white border border-slate-300 text-slate-600 text-sm flex items-center justify-center gap-2 mx-auto hover:border-red-400 hover:text-red-800 hover:bg-red-50 py-3 px-6 rounded-full shadow-sm transition-all disabled:opacity-50 font-bold"
+                    >
+                      <RefreshCw size={16} />
+                      違うタグにする
+                    </button>
+                  </div>
+                </>
               )}
             </div>
           )}
 
           {showResult && (
             <div className="animate-fade-in">
-              <div className={`p-4 rounded-lg mb-4 border-l-4 ${
-                selectedTag 
-                  ? 'bg-gradient-to-r from-amber-50 to-red-50 border-amber-500' 
-                  : filteredDramas.length > 0
-                    ? 'bg-slate-50 border-blue-500' 
-                    : 'bg-yellow-50 border-yellow-500' 
-              }`}>
+              <div className={`p-4 rounded-lg mb-4 border-l-4 ${selectedTag
+                ? 'bg-gradient-to-r from-amber-50 to-red-50 border-amber-500'
+                : filteredDramas.length > 0
+                  ? 'bg-slate-50 border-blue-500'
+                  : 'bg-yellow-50 border-yellow-500'
+                }`}>
                 {selectedTag ? (
                   <>
                     <h2 className="text-xl font-bold text-red-900 flex items-center gap-2 mb-2">
@@ -331,24 +333,23 @@ export default function Home() {
                             {drama.title}
                           </h3>
                         </div>
-                        
+
                         <div className="flex flex-col gap-3 mt-4">
                           <a
                             href={isAffiliateValid ? drama.affiliate_link : `https://www.amazon.co.jp/s?k=${encodeURIComponent(drama.title)}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`block w-full text-center py-3 rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 ${
-                              isAffiliateValid
-                                ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white" 
-                                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                            }`}
+                            className={`block w-full text-center py-3 rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 ${isAffiliateValid
+                              ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white"
+                              : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                              }`}
                           >
                             {isAffiliateValid ? "今すぐ観る" : "Amazonで探す"}
                           </a>
 
-                          <a 
+                          <a
                             href={getBlogLink(drama)}
-                            target="_blank" 
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 bg-slate-800 text-white py-2.5 rounded-lg font-bold hover:bg-slate-700 transition-colors text-sm"
                           >
@@ -364,9 +365,9 @@ export default function Home() {
 
               <div className="bg-slate-50 border border-slate-200 p-4 rounded-lg mb-4 text-center">
                 <p className="text-xs text-slate-400 mb-2">- PR -</p>
-                <a 
-                  href="https://amzn.to/3MzbRpI" 
-                  target="_blank" 
+                <a
+                  href="https://amzn.to/3MzbRpI"
+                  target="_blank"
                   rel="nofollow sponsored noopener noreferrer"
                   className="block hover:opacity-90 transition-opacity"
                 >
@@ -391,15 +392,15 @@ export default function Home() {
 
         <div className="mt-8 mb-8 text-center">
           <p className="text-xs text-slate-400 mb-1">- PR -</p>
-          <a 
-            href="https://amzn.to/3MzbRpI" 
-            target="_blank" 
+          <a
+            href="https://amzn.to/3MzbRpI"
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-block hover:opacity-90 transition-opacity"
           >
-            <img 
-              src="https://m.media-amazon.com/images/I/61jhW7Vi2SL._AC_SL1500_.jpg" 
-              alt="Amazonおすすめ商品" 
+            <img
+              src="https://m.media-amazon.com/images/I/61jhW7Vi2SL._AC_SL1500_.jpg"
+              alt="Amazonおすすめ商品"
               className="max-w-full h-auto rounded-lg shadow-md border border-slate-200"
               style={{ maxHeight: '200px' }}
             />
@@ -409,13 +410,13 @@ export default function Home() {
           </p>
         </div>
       </div>
-      
+
       <footer className="py-8 text-center text-xs text-slate-400 border-t border-slate-200 mt-12 bg-slate-50">
         <p className="mb-1">当サイトはアフィリエイト広告（Amazonアソシエイト含む）を利用しています。</p>
         <p>Amazonのアソシエイトとして、適格販売により収入を得ています。</p>
         <p className="mt-4">&copy; 中国ドラマ コンシェルジュ</p>
       </footer>
-      
+
       <Analytics />
     </main>
   );

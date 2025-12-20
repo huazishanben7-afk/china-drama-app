@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns="http://purl.org/rss/1.0/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel rdf:about="https://www.tvkingdom.jp/">
+    <title>Gガイド.テレビ王国 - 検索結果のRSS配信 - BSデジタル(東京)</title>
+    <link>https://www.tvkingdom.jp/</link>
+    <description>テレビ番組情報を提供しています。局の都合により、番組内容、放送時間などが変更になる事があります。番組データ提供元：（株）インタラクティブ・プログラム・ガイド。この情報の無断複写・転載を禁じます。</description>
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512211300.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512220530.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512220700.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512220730.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512221100.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512221600.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512230100.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512230150.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512230240.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512230330.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512230420.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512230530.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512230700.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512230730.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512231100.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512231600.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512240530.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512240700.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512240730.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512241100.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512242000.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512242050.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512250000.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512250050.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512250530.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512250700.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512250730.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200191202512251100.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512251500.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512260530.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512260700.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512261500.action?from=rss"/>
+        <rdf:li rdf:resource="https://www.tvkingdom.jp/schedule/200222202512261600.action?from=rss"/>
+      </rdf:Seq>
+    </items>
+    <dc:language>ja</dc:language>
+    <dc:publisher>SMN株式会社 Gガイド.テレビ王国</dc:publisher>
+    <dc:creator>SMN株式会社 Gガイド.テレビ王国</dc:creator>
+    <dc:rights>Copyright 1999-2025 SMN Corporation. Copyright 2025 Interactive Program Guide Inc.</dc:rights>
+    <dc:date>2025-12-20T16:11+09:00</dc:date>
+  </channel>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512211300.action?from=rss">
+    <title>中国ドラマ この結婚は社内秘で 第32話[終]、第33話【番外編】字幕</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512211300.action?from=rss</link>
+    <description>12/21 13:00～14:50 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-21T13:00+09:00</dc:date>
+    <dc:relation>4:222:14630</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512220530.action?from=rss">
+    <title>中国ドラマ 双燕秘抄 乱世を舞う二羽の絆 第２３話（字幕）</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512220530.action?from=rss</link>
+    <description>12/22 5:30～6:30 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-22T05:30+09:00</dc:date>
+    <dc:relation>4:222:14655</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512220700.action?from=rss">
+    <title>中国ドラマ 風の吹く場所へ～love yourself～【リウ・イーフェイ×リー・シエン】26話</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512220700.action?from=rss</link>
+    <description>12/22 7:00～7:57 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-22T07:00+09:00</dc:date>
+    <dc:relation>4:222:14657</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512220730.action?from=rss">
+    <title>国色芳華（こくしょくほうか）～牡丹の花咲く都で～　＃９　第９話（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512220730.action?from=rss</link>
+    <description>12/22 7:30～8:20 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-22T07:30+09:00</dc:date>
+    <dc:relation>4:191:45077</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512221100.action?from=rss">
+    <title>燕雲台－Ｔｈｅ　Ｌｅｇｅｎｄ　ｏｆ　Ｅｍｐｒｅｓｓ－　＃４４　代償を…（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512221100.action?from=rss</link>
+    <description>12/22 11:00～12:00 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-22T11:00+09:00</dc:date>
+    <dc:relation>4:191:45081</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512221600.action?from=rss">
+    <title>中国ドラマ 楽游原【シュー・カイ×ジン・ティエン主演】第３９話、第４０話（字幕）</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512221600.action?from=rss</link>
+    <description>12/22 16:00～17:58 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-22T16:00+09:00</dc:date>
+    <dc:relation>4:222:14668</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512230100.action?from=rss">
+    <title>唐朝詭事録＜とうちょうきじろく＞　第二季　＃２１　逆賊の拠点へ（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512230100.action?from=rss</link>
+    <description>12/23 1:00～1:50 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-23T01:00+09:00</dc:date>
+    <dc:relation>4:191:45094</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512230150.action?from=rss">
+    <title>唐朝詭事録＜とうちょうきじろく＞　第二季　＃２２　会主の正体（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512230150.action?from=rss</link>
+    <description>12/23 1:50～2:40 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-23T01:50+09:00</dc:date>
+    <dc:relation>4:191:45095</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512230240.action?from=rss">
+    <title>唐朝詭事録＜とうちょうきじろく＞　第二季　＃２３　暴かれた陰謀（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512230240.action?from=rss</link>
+    <description>12/23 2:40～3:30 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-23T02:40+09:00</dc:date>
+    <dc:relation>4:191:45096</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512230330.action?from=rss">
+    <title>唐朝詭事録＜とうちょうきじろく＞　第二季　＃２４　愚かな野心（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512230330.action?from=rss</link>
+    <description>12/23 3:30～4:20 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-23T03:30+09:00</dc:date>
+    <dc:relation>4:191:45097</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512230420.action?from=rss">
+    <title>唐朝詭事録＜とうちょうきじろく＞　第二季　＃２５　夜市のある街（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512230420.action?from=rss</link>
+    <description>12/23 4:20～5:10 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-23T04:20+09:00</dc:date>
+    <dc:relation>4:191:45098</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512230530.action?from=rss">
+    <title>中国ドラマ 双燕秘抄 乱世を舞う二羽の絆 第２４話（字幕）</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512230530.action?from=rss</link>
+    <description>12/23 5:30～6:25 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-23T05:30+09:00</dc:date>
+    <dc:relation>4:222:14687</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512230700.action?from=rss">
+    <title>中国ドラマ 風の吹く場所へ～love yourself～【リウ・イーフェイ×リー・シエン】27話</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512230700.action?from=rss</link>
+    <description>12/23 7:00～7:57 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-23T07:00+09:00</dc:date>
+    <dc:relation>4:222:14690</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512230730.action?from=rss">
+    <title>国色芳華（こくしょくほうか）～牡丹の花咲く都で～　＃１０　第１０話（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512230730.action?from=rss</link>
+    <description>12/23 7:30～8:20 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-23T07:30+09:00</dc:date>
+    <dc:relation>4:191:45100</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512231100.action?from=rss">
+    <title>燕雲台－Ｔｈｅ　Ｌｅｇｅｎｄ　ｏｆ　Ｅｍｐｒｅｓｓ－　＃４５　本当の…（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512231100.action?from=rss</link>
+    <description>12/23 11:00～12:00 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-23T11:00+09:00</dc:date>
+    <dc:relation>4:191:45104</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512231600.action?from=rss">
+    <title>中国ドラマ 楽游原【シュー・カイ×ジン・ティエン主演】第41話、第42話（字幕）[終]</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512231600.action?from=rss</link>
+    <description>12/23 16:00～18:00 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-23T16:00+09:00</dc:date>
+    <dc:relation>4:222:14700</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512240530.action?from=rss">
+    <title>中国ドラマ 双燕秘抄 乱世を舞う二羽の絆 第２５話（字幕）</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512240530.action?from=rss</link>
+    <description>12/24 5:30～6:25 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-24T05:30+09:00</dc:date>
+    <dc:relation>4:222:14715</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512240700.action?from=rss">
+    <title>中国ドラマ 風の吹く場所へ～love yourself～【リウ・イーフェイ×リー・シエン】28話</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512240700.action?from=rss</link>
+    <description>12/24 7:00～7:57 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-24T07:00+09:00</dc:date>
+    <dc:relation>4:222:14718</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512240730.action?from=rss">
+    <title>天行健～革命前夜、風立ちぬ～　＃３５　故郷へ帰ろう（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512240730.action?from=rss</link>
+    <description>12/24 7:30～8:20 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-24T07:30+09:00</dc:date>
+    <dc:relation>4:191:45119</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512241100.action?from=rss">
+    <title>燕雲台－Ｔｈｅ　Ｌｅｇｅｎｄ　ｏｆ　Ｅｍｐｒｅｓｓ－　＃４６　果たさ…（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512241100.action?from=rss</link>
+    <description>12/24 11:00～12:00 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-24T11:00+09:00</dc:date>
+    <dc:relation>4:191:45123</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512242000.action?from=rss">
+    <title>[初]国色芳華（こくしょくほうか）～牡丹の花咲く都で～　＃１１　…（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512242000.action?from=rss</link>
+    <description>12/24 20:00～20:50 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-24T20:00+09:00</dc:date>
+    <dc:relation>4:191:45131</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512242050.action?from=rss">
+    <title>[初]国色芳華（こくしょくほうか）～牡丹の花咲く都で～　＃１２　…（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512242050.action?from=rss</link>
+    <description>12/24 20:50～21:40 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-24T20:50+09:00</dc:date>
+    <dc:relation>4:191:45132</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512250000.action?from=rss">
+    <title>[初]ヤン・ズー×シュー・カイ「承歓記（しょうかんき）」＃２０（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512250000.action?from=rss</link>
+    <description>12/25 0:00～0:50 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-25T00:00+09:00</dc:date>
+    <dc:relation>4:191:45138</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512250050.action?from=rss">
+    <title>[初]ヤン・ズー×シュー・カイ「承歓記（しょうかんき）」＃２１（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512250050.action?from=rss</link>
+    <description>12/25 0:50～1:45 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-25T00:50+09:00</dc:date>
+    <dc:relation>4:191:45139</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512250530.action?from=rss">
+    <title>中国ドラマ 双燕秘抄 乱世を舞う二羽の絆 第２６話（字幕）</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512250530.action?from=rss</link>
+    <description>12/25 5:30～6:25 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-25T05:30+09:00</dc:date>
+    <dc:relation>4:222:14743</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512250700.action?from=rss">
+    <title>中国ドラマ 風の吹く場所へ～love yourself～【リウ・イーフェイ×リー・シエン】29話</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512250700.action?from=rss</link>
+    <description>12/25 7:00～7:57 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-25T07:00+09:00</dc:date>
+    <dc:relation>4:222:14746</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512250730.action?from=rss">
+    <title>天行健～革命前夜、風立ちぬ～　＃３６　新しい時代へ（字幕版）[終]</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512250730.action?from=rss</link>
+    <description>12/25 7:30～8:20 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-25T07:30+09:00</dc:date>
+    <dc:relation>4:191:45149</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200191202512251100.action?from=rss">
+    <title>燕雲台－Ｔｈｅ　Ｌｅｇｅｎｄ　ｏｆ　Ｅｍｐｒｅｓｓ－　＃４７　太后の…（字幕版）</title>
+    <link>https://www.tvkingdom.jp/schedule/200191202512251100.action?from=rss</link>
+    <description>12/25 11:00～12:00 [ＷＯＷＯＷプライム(Ch.191)]</description>
+    <dc:subject>
+        ドラマ
+    </dc:subject>
+    <dc:date>2025-12-25T11:00+09:00</dc:date>
+    <dc:relation>4:191:45153</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512251500.action?from=rss">
+    <title>中国ドラマ 天啓異聞録【ホアン・シュエン主演】第9話（字幕）</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512251500.action?from=rss</link>
+    <description>12/25 15:00～16:00 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-25T15:00+09:00</dc:date>
+    <dc:relation>4:222:14755</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512260530.action?from=rss">
+    <title>中国ドラマ 双燕秘抄 乱世を舞う二羽の絆 第２７話（字幕）</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512260530.action?from=rss</link>
+    <description>12/26 5:30～6:30 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-26T05:30+09:00</dc:date>
+    <dc:relation>4:222:14774</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512260700.action?from=rss">
+    <title>中国ドラマ 風の吹く場所へ～love yourself～【リウ・イーフェイ×リー・シエン】30話</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512260700.action?from=rss</link>
+    <description>12/26 7:00～7:55 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-26T07:00+09:00</dc:date>
+    <dc:relation>4:222:14776</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512261500.action?from=rss">
+    <title>中国ドラマ 天啓異聞録【ホアン・シュエン主演】第10話（字幕）</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512261500.action?from=rss</link>
+    <description>12/26 15:00～16:00 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-26T15:00+09:00</dc:date>
+    <dc:relation>4:222:14785</dc:relation>
+  </item>
+  <item rdf:about="https://www.tvkingdom.jp/schedule/200222202512261600.action?from=rss">
+    <title>中国ドラマ 惜花シ 星が照らす道 【フー・イーティエン×チャン・ジンイー】21、22話</title>
+    <link>https://www.tvkingdom.jp/schedule/200222202512261600.action?from=rss</link>
+    <description>12/26 16:00～18:00 [BS12 トゥエルビ(Ch.222)]</description>
+    <dc:subject>
+        ドラマ , 
+        ドキュメンタリー／教養
+    </dc:subject>
+    <dc:date>2025-12-26T16:00+09:00</dc:date>
+    <dc:relation>4:222:14786</dc:relation>
+  </item>
+</rdf:RDF>
