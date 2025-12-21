@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "中国ドラマ コンシェルジュ | おすすめ作品を診断",
   description: "「次に見るドラマが決まらない…」を解決！診断ガチャで新しいドラマに出会えます！",
-  manifest: '/manifest.json',
+
   icons: {
     icon: '/apple-icon.png',
     apple: [
