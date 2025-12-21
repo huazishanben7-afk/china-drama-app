@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   description: "「次に見るドラマが決まらない…」を解決！診断ガチャで新しいドラマに出会えます！",
   manifest: '/manifest.json',
   icons: {
+    icon: '/apple-icon.png',
     apple: [
       { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
     ],
