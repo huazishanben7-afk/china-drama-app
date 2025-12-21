@@ -8,7 +8,9 @@ const API_URL = 'https://tvguide.myjcom.jp/api/getProgramInfo/';
 const TARGET_CHANNELS = [
     'ホームドラマチャンネル',
     'アジアドラマチックTV',
-    'J:COM' // Will catch J:COM BS, J:COM TV, etc.
+    'J:COM', // Will catch J:COM BS, J:COM TV, etc.
+    'LaLa TV',
+    '衛星劇場'
 ];
 
 interface JcomProgram {
@@ -152,16 +154,25 @@ export async function fetchJcomData(): Promise<DramaSchedule[]> {
             total = data.totalCount;
 
             for (const p of data.programs) {
+                // Normalize Channel Names for Display & Filtering
+                if (p.channelName.includes('LaLa')) p.channelName = 'LaLa TV';
+                if (p.channelName.includes('衛星劇場')) p.channelName = '衛星劇場';
+
                 const isTarget = TARGET_CHANNELS.some(t => p.channelName.includes(t));
                 if (!isTarget) continue;
 
-                // User-defined filters to exclude Korean dramas
+                // User-defined filters to exclude non-Chinese dramas
                 // J:COM BS -> Starts with "中国"
                 // Asian Dramatic TV -> Starts with "[中]"
-                // Home Drama Channel -> Starts with "華"
+                // Home Drama Channel, LaLa TV, Eiseigekijo -> Starts with "華" (often "華◆")
+                // Adding "中国" check for safety
                 if (p.channelName.includes('J:COM') && !p.title.startsWith('中国')) continue;
                 if (p.channelName.includes('アジアドラマチックTV') && !p.title.startsWith('[中]')) continue;
-                if (p.channelName.includes('ホームドラマチャンネル') && !p.title.startsWith('華')) continue;
+
+                const requireHana = ['ホームドラマチャンネル', 'LaLa TV', '衛星劇場'];
+                if (requireHana.some(c => p.channelName.includes(c))) {
+                    if (!p.title.startsWith('華') && !p.title.includes('中国')) continue;
+                }
 
                 // Parse Start Time
                 const y = parseInt(p.startTime.substring(0, 4));
