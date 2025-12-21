@@ -193,7 +193,7 @@ export default function Home() {
           <p className="text-red-200 mb-4">1万記事の中から、あなたにぴったりの作品をご案内します</p>
           <Link href="/schedule" className="inline-flex items-center gap-2 bg-amber-500 text-red-900 px-6 py-2 rounded-full font-bold shadow-lg hover:bg-amber-400 transition-colors">
             <Tv size={18} />
-            放送予定を見る
+            中国ドラマのTV放送予定を見る
           </Link>
         </div>
       </div>
