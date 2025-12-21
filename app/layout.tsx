@@ -15,7 +15,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "中国ドラマ コンシェルジュ | おすすめ作品を診断",
-  description: "「次に見るドラマが決まらない…」を解決！診断ガチャで新しいドラマに出会おえます！",
+  description: "「次に見るドラマが決まらない…」を解決！診断ガチャで新しいドラマに出会えます！",
+  manifest: '/manifest.json',
+  icons: {
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  appleWebApp: {
+    capable: true,
+    title: '中国ドラマ',
+    statusBarStyle: 'default',
+  },
 };
 
 export default function RootLayout({
@@ -29,7 +40,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-{/* ★ここに貼り付け！ */}
+        {/* ★ここに貼り付け！ */}
         {/* Cloudflare Analytics */}
         <Script
           defer
