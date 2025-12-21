@@ -1,5 +1,7 @@
 
 import axios from 'axios';
+import fs from 'fs';
+import path from 'path';
 import { DramaSchedule, BroadcastEvent } from './crawl_bangumi'; // Reuse types
 
 const API_URL = 'https://tvguide.myjcom.jp/api/getProgramInfo/';
@@ -24,6 +26,81 @@ interface JcomResponse {
     programs: JcomProgram[];
 }
 
+interface BlogData {
+    title: string;
+    blogUrl: string;
+}
+
+const CSV_FILE = path.join(process.cwd(), 'public', 'data', 'drama_database_v2.csv');
+
+// --- Helper Functions ---
+
+function loadBlogData(): BlogData[] {
+    try {
+        if (!fs.existsSync(CSV_FILE)) return [];
+        const fileContent = fs.readFileSync(CSV_FILE, 'utf-8');
+        const lines = fileContent.split('\n');
+        const data: BlogData[] = [];
+
+        for (let i = 1; i < lines.length; i++) {
+            const line = lines[i].trim();
+            if (!line) continue;
+            const cols = line.split(',');
+            // Expecting col 1 to be title, col 2 to be URL
+            if (cols.length >= 2 && cols[1] && cols[1].startsWith('http')) {
+                data.push({
+                    title: cols[0].trim(),
+                    blogUrl: cols[1].trim()
+                });
+            }
+        }
+        return data;
+    } catch (error) {
+        console.warn('Failed to load CSV file:', error);
+        return [];
+    }
+}
+
+function normalizeTitle(fullTitle: string): string {
+    // 1. Remove obvious prefixes/suffixes
+    let title = fullTitle.replace(/^中国ドラマ\s*/, '');
+    title = title.replace(/^【.*?】/, ''); // 【字】 etc
+    title = title.replace(/^\[.*?\]/, ''); // [新] etc
+    title = title.replace(/【.*?】/g, ''); // Inline tags
+
+    // 2. Remove episode numbers
+    // Case A: (Optional Prefix) + Number + '話' (Explicit episode)
+    title = title.replace(/(?:第|＃|#)?[0-9０-９]+話/g, '');
+    // Case B: Space + Number + (Optional '話')
+    title = title.replace(/[\s　]+(第|＃|#)?[0-9０-９]+(?:話|)/g, '');
+    // Case C: Explicit prefix (第, ＃, #)
+    title = title.replace(/(第|＃|#)[0-9０-９]+(?:話|)/g, '');
+
+    // 3. Remove parenthesis info often at end
+    title = title.replace(/[\s　]*（.*?）$/, '');
+    title = title.replace(/[\s　]*＜.*?＞$/, '');
+
+    // 4. Strip surrounding brackets if any
+    title = title.replace(/^[「『](.*?)[」』]$/, '$1');
+
+    return title.trim();
+}
+
+function findBlogEntry(title: string, blogData: BlogData[]): BlogData | undefined {
+    const t1 = title.replace(/\s+/g, '').toLowerCase();
+
+    // Safety check: if title becomes empty or too short, don't match
+    if (!t1 || t1.length < 2) return undefined;
+
+    return blogData.find(b => {
+        const t2 = b.title.replace(/\s+/g, '').toLowerCase();
+        if (!t2) return false;
+        // Check mutual inclusion
+        return t1.includes(t2) || t2.includes(t1);
+    });
+}
+
+
 // Helper to format date
 function formatDateStr(date: Date): { date: string, startTime: string } {
     const y = date.getFullYear();
@@ -40,6 +117,9 @@ function formatDateStr(date: Date): { date: string, startTime: string } {
 export async function fetchJcomData(): Promise<DramaSchedule[]> {
     console.log('Starting J:COM crawl...');
     const schedules: DramaSchedule[] = [];
+    const blogDataList = loadBlogData();
+    console.log(`Loaded ${blogDataList.length} blog entries for matching.`);
+
     const limit = 100;
     let offset = 0;
     let total = 0;
@@ -99,16 +179,23 @@ export async function fetchJcomData(): Promise<DramaSchedule[]> {
                 // (Bangumi crawler logic might differ, but this is safer for J:COM mixed list)
                 let drama = schedules.find(d => d.title === p.title && d.channel === p.channelName);
                 if (!drama) {
+                    const normalized = normalizeTitle(p.title);
+                    const blogEntry = findBlogEntry(normalized, blogDataList);
+                    if (blogEntry) {
+                        console.log(`[J:COM Link Match] ${p.title} -> ${blogEntry.title}`);
+                    }
+
                     drama = {
                         title: p.title,
-                        url: p.url ? (p.url.startsWith('http') ? p.url : `https://tvguide.myjcom.jp${p.url}`) : '',
+                        url: blogEntry ? blogEntry.blogUrl : (p.url ? (p.url.startsWith('http') ? p.url : `https://tvguide.myjcom.jp${p.url}`) : ''),
                         channel: p.channelName,
                         scheduleText: '', // Will update later
                         nextBroadcasts: [],
-                        blogUrl: undefined
+                        blogUrl: blogEntry?.blogUrl
                     };
                     schedules.push(drama);
                 }
+
 
                 // Add event if unique
                 const exists = drama.nextBroadcasts.some(e =>
