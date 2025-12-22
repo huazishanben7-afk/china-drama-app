@@ -28,6 +28,8 @@ jobs:
         run: npm ci
 
       - name: Run Crawler
+        env:
+          TZ: 'Asia/Tokyo'
         run: npm run crawl
 
       - name: Check for changes
