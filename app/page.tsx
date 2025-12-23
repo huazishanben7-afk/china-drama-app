@@ -219,9 +219,9 @@ export default function Home() {
 
         <div className="mb-6 text-center">
           <p className="text-xs text-slate-400 mb-1">- PR -</p>
-          <div className="mx-auto rounded-lg shadow-md overflow-hidden bg-slate-50 border border-slate-200" style={{ maxWidth: '468px', height: '100px' }}>
-            <iframe src="/ads/ad_top_middle.html" title="えーこのドラマ視聴を支えるネット回線" width="100%" height="100%" loading="lazy" style={{ border: 0 }} />
-          </div>
+          <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405441" rel="nofollow" target="_blank" className="block mx-auto rounded-lg shadow-md overflow-hidden hover:opacity-95 transition-opacity" style={{ maxWidth: '468px' }}>
+            <img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405441" style={{ border: 0, width: '100%', height: 'auto' }} alt="えーこのドラマ視聴を支えるネット回線" />
+          </a>
           <p className="text-xs text-slate-500 mt-1">えーこのドラマ視聴を支えるネット回線</p>
         </div>
 
@@ -400,9 +400,9 @@ export default function Home() {
 
         <div className="mt-8 mb-8 text-center">
           <p className="text-xs text-slate-400 mb-1">- PR -</p>
-          <div className="mx-auto rounded-lg shadow-md overflow-hidden bg-slate-50 border border-slate-200" style={{ maxWidth: '468px', height: '100px' }}>
-            <iframe src="/ads/ad_top_bottom.html" title="えーこのドラマ視聴を支えるネット回線" width="100%" height="100%" loading="lazy" style={{ border: 0 }} />
-          </div>
+          <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405440" rel="nofollow" target="_blank" className="block mx-auto rounded-lg shadow-md overflow-hidden hover:opacity-95 transition-opacity" style={{ maxWidth: '468px' }}>
+            <img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405440" style={{ border: 0, width: '100%', height: 'auto' }} alt="えーこのドラマ視聴を支えるネット回線" />
+          </a>
           <p className="text-xs text-slate-500 mt-1">
             えーこのドラマ視聴を支えるネット回線
           </p>

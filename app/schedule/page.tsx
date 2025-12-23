@@ -205,8 +205,15 @@ export default function SchedulePage() {
 
                                 {/* 商品2: ネット回線 (Ad) */}
                                 <div className="bg-white rounded p-2 shadow-sm border border-amber-50 flex flex-col items-center hover:shadow transition-shadow">
-                                    <div className="w-full h-20 relative mb-1 flex items-center justify-center overflow-hidden bg-white">
-                                        <iframe src="/ads/ad_schedule.html" title="えーこのドラマ視聴を支えるネット回線" width="100%" height="100%" loading="lazy" style={{ border: 0 }} />
+                                    <div className="w-full h-16 relative mb-1 flex items-center justify-center overflow-hidden bg-white">
+                                        <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405444" rel="nofollow" target="_blank" className="flex items-center justify-center w-full h-full">
+                                            <img
+                                                src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405444"
+                                                alt="えーこのドラマ視聴を支えるネット回線"
+                                                className="max-h-full max-w-full object-contain"
+                                                style={{ border: 0 }}
+                                            />
+                                        </a>
                                     </div>
                                     <h3 className="font-bold text-[10px] text-slate-700 text-center mb-1 line-clamp-2 h-7 leading-tight">
                                         えーこのドラマ視聴を支えるネット回線
