@@ -215,8 +215,8 @@ export default function SchedulePage() {
                                             />
                                         </a>
                                     </div>
-                                    <h3 className="font-bold text-[10px] text-slate-700 text-center mb-1 line-clamp-2 h-7 leading-tight">
-                                        えーこのドラマ視聴を支えるネット回線
+                                    <h3 className="font-bold text-[10px] text-slate-700 text-center mb-1 h-auto leading-tight">
+                                        スカパー！なら、LaLa TVやアジドラなど、華流ドラマの専門チャンネルが勢揃い！
                                     </h3>
                                     <a
                                         href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405444"
