@@ -203,25 +203,28 @@ export default function SchedulePage() {
                                     </a>
                                 </div>
 
-                                {/* 商品2: 知覧紅茶 */}
+                                {/* 商品2: ネット回線 (Ad) */}
                                 <div className="bg-white rounded p-2 shadow-sm border border-amber-50 flex flex-col items-center hover:shadow transition-shadow">
                                     <div className="w-full h-16 relative mb-1 flex items-center justify-center overflow-hidden bg-white">
-                                        <img
-                                            src="https://m.media-amazon.com/images/I/51RkDW3IJeL._AC_SL1280_.jpg"
-                                            alt="知覧紅茶"
-                                            className="max-h-full max-w-full object-contain"
-                                        />
+                                        <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405444" rel="nofollow" target="_blank" className="flex items-center justify-center w-full h-full">
+                                            <img
+                                                src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405444"
+                                                alt="えーこのドラマ視聴を支えるネット回線"
+                                                className="max-h-full max-w-full object-contain"
+                                                style={{ border: 0 }}
+                                            />
+                                        </a>
                                     </div>
                                     <h3 className="font-bold text-[10px] text-slate-700 text-center mb-1 line-clamp-2 h-7 leading-tight">
-                                        かごしま知覧紅茶
+                                        えーこのドラマ視聴を支えるネット回線
                                     </h3>
                                     <a
-                                        href="https://www.amazon.co.jp/%E3%83%9D%E3%83%83%E3%82%AB%E3%82%B5%E3%83%83%E3%83%9D%E3%83%AD-%E3%81%8B%E3%81%94%E3%81%97%E3%81%BE%E7%9F%A5%E8%A6%A7%E7%B4%85%E8%8C%B6%E7%84%A1%E7%B3%96-500ml-PET-%C3%9724%E6%9C%AC/dp/B0D93FCH5G?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&crid=3VIAGYW1HJ5KM&dib=eyJ2IjoiMSJ9.pQQsi0SYoCnnXC2PGkCWZkt6d6xV7XqmGCHUzjPww33fzlcrlJFfmSa3OaFMjRw-MW-OMxnVsF70dMIytx3APvQUxQTZIpful7_dKAABLLSwGHxPx98giRbTbIZefSMIlGOVAsHN7eIf3G3dZpTG3Lvw2ldqmAAccRFj1MFTbo1-zYGerqoGwMhiAYloQlfltXUsi6m49ptkUGYyZ_cqzTaDg3xizpiFoGnS6HDgmjhsXRcHxswJhS-L_IK4ZaN2fCNZbSmPfozRPvwa6WmNEy3aZao6-uqXEF6FKqVc_gg.GSylQ6KeZTozg8ZuZUt4p9AyigITb23Y1c3aOIoGFbY&dib_tag=se&keywords=%E7%9F%A5%E8%A6%A7%E7%B4%85%E8%8C%B6&qid=1766275937&sprefix=%E7%9F%A5%E8%A6%A7%E3%81%93%2Caps%2C175&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll1&tag=poupe-22&linkId=64c2453a3a2b9b0b01f710a42808f0a9&language=ja_JP&ref_=as_li_ss_tl"
+                                        href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405444"
+                                        rel="nofollow"
                                         target="_blank"
-                                        rel="noopener noreferrer"
                                         className="mt-auto w-full bg-amber-500 hover:bg-amber-400 text-white font-bold py-1 px-2 rounded text-[10px] text-center transition-colors shadow-sm"
                                     >
-                                        見る
+                                        華ドラを見る
                                     </a>
                                 </div>
 

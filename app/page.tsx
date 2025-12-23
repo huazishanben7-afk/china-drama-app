@@ -217,6 +217,14 @@ export default function Home() {
           </button>
         </form>
 
+        <div className="mb-6 text-center">
+          <p className="text-xs text-slate-400 mb-1">- PR -</p>
+          <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405441" rel="nofollow" target="_blank">
+            <img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405441" style={{ border: 0 }} className="mx-auto rounded-lg shadow-md" alt="えーこのドラマ視聴を支えるネット回線" />
+          </a>
+          <p className="text-xs text-slate-500 mt-1">えーこのドラマ視聴を支えるネット回線</p>
+        </div>
+
         <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-amber-400 mb-6 relative">
           <div className="absolute top-0 right-0 bg-amber-400 text-red-900 text-xs font-bold px-3 py-1 rounded-bl-lg">
             診断ガチャ
@@ -393,20 +401,20 @@ export default function Home() {
         <div className="mt-8 mb-8 text-center">
           <p className="text-xs text-slate-400 mb-1">- PR -</p>
           <a
-            href="https://amzn.to/3MzbRpI"
+            href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405440"
+            rel="nofollow"
             target="_blank"
-            rel="noopener noreferrer"
             className="inline-block hover:opacity-90 transition-opacity"
           >
             <img
-              src="https://m.media-amazon.com/images/I/61jhW7Vi2SL._AC_SL1500_.jpg"
-              alt="Amazonおすすめ商品"
-              className="max-w-full h-auto rounded-lg shadow-md border border-slate-200"
-              style={{ maxHeight: '200px' }}
+              src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405440"
+              alt="えーこのドラマ視聴を支えるネット回線"
+              className="max-w-full h-auto rounded-lg shadow-md border border-slate-200 mx-auto"
+              style={{ border: 0 }}
             />
           </a>
           <p className="text-xs text-slate-500 mt-1">
-            ドラマ視聴に最適！Fire TV Stick 4K
+            えーこのドラマ視聴を支えるネット回線
           </p>
         </div>
       </div>
