@@ -403,8 +403,8 @@ export default function Home() {
 
         <div className="mt-8 mb-8 text-center">
           <p className="text-xs text-slate-400 mb-1">- PR -</p>
-          <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405440" rel="nofollow" target="_blank" className="block mx-auto rounded-lg shadow-md overflow-hidden hover:opacity-95 transition-opacity" style={{ maxWidth: '468px' }}>
-            <img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405440" style={{ border: 0, width: '100%', height: 'auto' }} alt="えーこのドラマ視聴を支えるネット回線" />
+          <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405461" rel="nofollow" target="_blank" className="block mx-auto rounded-lg shadow-md overflow-hidden hover:opacity-95 transition-opacity" style={{ maxWidth: '468px' }}>
+            <img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405461" style={{ border: 0, width: '100%', height: 'auto' }} alt="えーこのドラマ視聴を支えるネット回線" />
           </a>
           <p className="text-xs text-slate-500 mt-1">
             えーこのドラマ視聴を支えるネット回線
