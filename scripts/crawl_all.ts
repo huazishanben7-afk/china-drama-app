@@ -82,6 +82,17 @@ async function main() {
             }
         }
 
+        // --- VALIDATION START ---
+        // Ensure we actually fetched data. If J:COM or Bangumi fail repeatedly (return 0), we should fail the build
+        // so that we don't overwrite good data with empty data (or commit partial data).
+        if (bangumiData.length === 0) {
+            throw new Error('Bangumi crawler returned 0 items. Possible parsing issue or site change.');
+        }
+        if (jcomData.length === 0) {
+            throw new Error('J:COM crawler returned 0 items. Possible API blocking or timeout.');
+        }
+        // --- VALIDATION END ---
+
         // Re-generate scheduleText for all merged items
         const allSchedules = Array.from(mergedMap.values());
         for (const s of allSchedules) {
