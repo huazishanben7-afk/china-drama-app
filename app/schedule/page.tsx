@@ -69,9 +69,14 @@ export default function SchedulePage() {
                 // 日付順にソート
                 allEvents.sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime());
 
-                // 現在時刻より前のイベントをフィルタリング
+                // 現在時刻より前のイベントをフィルタリング（放送開始から1時間は表示し続ける）
                 const now = new Date();
-                const futureEvents = allEvents.filter(event => event.dateObj > now);
+                const oneHourMs = 60 * 60 * 1000; // 1時間（ミリ秒）
+
+                const futureEvents = allEvents.filter(event => {
+                    // 放送開始時間 + 1時間 が 現在時刻より未来なら表示
+                    return (event.dateObj.getTime() + oneHourMs) > now.getTime();
+                });
 
                 setEvents(futureEvents);
             } catch (err: any) {
