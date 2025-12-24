@@ -406,13 +406,13 @@ export default function Home() {
         <div className="mt-8 mb-8 text-center">
           <p className="text-xs text-slate-400 mb-1">- PR -</p>
           <a
-            href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892408764"
+            href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892412132"
             rel="nofollow"
             target="_blank"
-            className="block w-full max-w-[468px] mx-auto bg-[#0052cc] text-white font-bold text-center py-4 px-6 rounded-lg shadow-[0_5px_0_#003a94] active:shadow-[0_2px_0_#003a94] active:translate-y-[3px] transition-all text-base leading-snug"
+            className="block w-full max-w-[320px] mx-auto bg-[#ff9900] text-white font-bold text-center py-4 px-6 rounded-lg shadow-[0_4px_0_#b36b00] active:shadow-[0_2px_0_#b36b00] active:translate-y-[2px] transition-all text-base leading-snug hover:opacity-95"
           >
-            <img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892408764" height="1" width="1" className="hidden" alt="" />
-            えーこのドラマ視聴を支えるネット回線
+            <img src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892412132" height="1" width="1" className="hidden" alt="" />
+            スカパー！で今すぐ華ドラを観る
           </a>
         </div>
       </div>
