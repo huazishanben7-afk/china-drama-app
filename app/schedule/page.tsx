@@ -68,7 +68,12 @@ export default function SchedulePage() {
 
                 // 日付順にソート
                 allEvents.sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime());
-                setEvents(allEvents);
+
+                // 現在時刻より前のイベントをフィルタリング
+                const now = new Date();
+                const futureEvents = allEvents.filter(event => event.dateObj > now);
+
+                setEvents(futureEvents);
             } catch (err: any) {
                 setError(err.message);
             } finally {
