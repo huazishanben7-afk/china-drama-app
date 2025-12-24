@@ -177,7 +177,51 @@ export default function SchedulePage() {
                             </div>
                         </div>
 
-                        {/* Amazon おすすめ商品セクション (Compact) */}
+
+
+                        {/* 直近の放送リスト */}
+                        <div className="mb-10">
+                            <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2 border-l-4 border-red-800 pl-3">
+                                <Calendar className="text-red-800" size={20} />
+                                これからの放送スケジュール
+                            </h2>
+
+                            {filteredEvents.length === 0 ? (
+                                <p className="text-slate-500 text-center py-8 bg-white rounded-lg shadow-sm border border-slate-200">
+                                    該当する放送予定はありません
+                                </p>
+                            ) : (
+                                <div className="space-y-3">
+                                    {filteredEvents.map((event, index) => {
+                                        // 日付が変わるタイミングでヘッダーを入れるなどの工夫もできるが、今回はシンプルにリスト表示
+                                        const isToday = new Date().toDateString() === event.dateObj.toDateString();
+
+                                        return (
+                                            <div key={event.id} className={`bg-white p-4 rounded-lg shadow-sm border flex gap-4 ${isToday ? 'border-red-400 ring-1 ring-red-100' : 'border-slate-200'}`}>
+                                                <div className="flex flex-col items-center justify-center min-w-[3.5rem] bg-slate-100 rounded p-2 text-slate-700">
+                                                    <span className="text-xs font-bold">{formatDate(event.date)}</span>
+                                                    <span className="text-lg font-bold text-red-800">{event.startTime}</span>
+                                                </div>
+                                                <div className="flex-1 min-w-0">
+                                                    <div className="text-xs font-bold text-amber-600 mb-1 flex items-center gap-1">
+                                                        <Tv size={12} />
+                                                        {event.channel}
+                                                    </div>
+                                                    <Link href={event.url} target="_blank" className="font-bold text-slate-800 text-lg hover:text-red-700 hover:underline line-clamp-2">
+                                                        {event.title}
+                                                    </Link>
+                                                </div>
+                                                <div className="flex items-center text-slate-300">
+                                                    <ChevronRight />
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Amazon おすすめ商品セクション (Compact) - Moved here */}
                         <div className="mb-8 bg-gradient-to-r from-red-50 to-amber-50 rounded-lg p-3 border border-amber-200 shadow-sm relative overflow-hidden">
                             <div className="absolute top-0 right-0 bg-amber-400 text-red-900 text-[10px] font-bold px-2 py-0.5 rounded-bl-md z-10">
                                 PR
@@ -260,48 +304,6 @@ export default function SchedulePage() {
                                     </a>
                                 </div>
                             </div>
-                        </div>
-
-                        {/* 直近の放送リスト */}
-                        <div className="mb-10">
-                            <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2 border-l-4 border-red-800 pl-3">
-                                <Calendar className="text-red-800" size={20} />
-                                これからの放送スケジュール
-                            </h2>
-
-                            {filteredEvents.length === 0 ? (
-                                <p className="text-slate-500 text-center py-8 bg-white rounded-lg shadow-sm border border-slate-200">
-                                    該当する放送予定はありません
-                                </p>
-                            ) : (
-                                <div className="space-y-3">
-                                    {filteredEvents.map((event, index) => {
-                                        // 日付が変わるタイミングでヘッダーを入れるなどの工夫もできるが、今回はシンプルにリスト表示
-                                        const isToday = new Date().toDateString() === event.dateObj.toDateString();
-
-                                        return (
-                                            <div key={event.id} className={`bg-white p-4 rounded-lg shadow-sm border flex gap-4 ${isToday ? 'border-red-400 ring-1 ring-red-100' : 'border-slate-200'}`}>
-                                                <div className="flex flex-col items-center justify-center min-w-[3.5rem] bg-slate-100 rounded p-2 text-slate-700">
-                                                    <span className="text-xs font-bold">{formatDate(event.date)}</span>
-                                                    <span className="text-lg font-bold text-red-800">{event.startTime}</span>
-                                                </div>
-                                                <div className="flex-1 min-w-0">
-                                                    <div className="text-xs font-bold text-amber-600 mb-1 flex items-center gap-1">
-                                                        <Tv size={12} />
-                                                        {event.channel}
-                                                    </div>
-                                                    <Link href={event.url} target="_blank" className="font-bold text-slate-800 text-lg hover:text-red-700 hover:underline line-clamp-2">
-                                                        {event.title}
-                                                    </Link>
-                                                </div>
-                                                <div className="flex items-center text-slate-300">
-                                                    <ChevronRight />
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            )}
                         </div>
 
                         {/* 作品別リスト (アコーディオン的ではなく一覧で) */}
