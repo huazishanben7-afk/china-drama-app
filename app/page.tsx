@@ -219,11 +219,15 @@ export default function Home() {
 
         <div className="mb-6 text-center">
           <p className="text-xs text-slate-400 mb-1">- PR -</p>
-          <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm mx-auto flex flex-col items-center justify-center gap-2" style={{ maxWidth: '468px', minHeight: '100px' }}>
-            <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405457" rel="nofollow" target="_blank" className="font-bold text-blue-600 hover:underline text-base leading-tight">
-              【フレッツ光】安心と信頼の光回線｜最大79,000円キャッシュバック
-            </a>
-          </div>
+          <a
+            href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892408764"
+            rel="nofollow"
+            target="_blank"
+            className="block w-full max-w-[468px] mx-auto bg-[#0052cc] text-white font-bold text-center py-4 px-6 rounded-lg shadow-[0_5px_0_#003a94] active:shadow-[0_2px_0_#003a94] active:translate-y-[3px] transition-all text-base leading-snug"
+          >
+            <img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892408764" height="1" width="1" className="hidden" alt="" />
+            えーこのドラマ視聴を支えるネット回線
+          </a>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-amber-400 mb-6 relative">
@@ -401,8 +405,14 @@ export default function Home() {
 
         <div className="mt-8 mb-8 text-center">
           <p className="text-xs text-slate-400 mb-1">- PR -</p>
-          <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405461" rel="nofollow" target="_blank" className="block mx-auto rounded-lg shadow-md overflow-hidden hover:opacity-95 transition-opacity" style={{ maxWidth: '468px' }}>
-            <img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405461" style={{ border: 0, width: '100%', height: 'auto' }} alt="えーこのドラマ視聴を支えるネット回線" />
+          <a
+            href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892408764"
+            rel="nofollow"
+            target="_blank"
+            className="block w-full max-w-[468px] mx-auto bg-[#0052cc] text-white font-bold text-center py-4 px-6 rounded-lg shadow-[0_5px_0_#003a94] active:shadow-[0_2px_0_#003a94] active:translate-y-[3px] transition-all text-base leading-snug"
+          >
+            <img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892408764" height="1" width="1" className="hidden" alt="" />
+            えーこのドラマ視聴を支えるネット回線
           </a>
         </div>
       </div>
