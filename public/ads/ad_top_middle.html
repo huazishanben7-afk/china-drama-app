@@ -4,57 +4,86 @@
 <head>
     <meta charset="utf-8">
     <style>
+        /* リセットと基本設定 */
+        html,
         body {
             margin: 0;
             padding: 8px;
-            overflow: hidden;
-            background: transparent;
+            /* ボタンの影などが切れないように余白確保 */
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            background: transparent !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            overflow: hidden;
         }
 
-        /* 広告リンクを青い立体ボタン風にする */
+        /* ValueCommerceが生成する可能性のあるラッパー(div, table等)のスタイルを強制リセット */
+        body>*,
+        body>*>*,
+        body>*>*>* {
+            background-color: transparent !important;
+            background-image: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        /* 広告リンク（aタグ）を青い立体ボタンに強制変換 */
         a {
-            display: block;
-            width: 100%;
-            background-color: #0052cc;
-            /* 鮮やかな濃い青 */
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            width: 100% !important;
+            max-width: 100% !important;
+            background-color: #0052cc !important;
+            /* 鮮やかな青 */
             color: #ffffff !important;
-            /* 文字色は白 */
-            font-weight: bold;
+            /* 白文字 */
+            font-weight: bold !important;
             text-decoration: none !important;
-            /* 下線を消す */
-            text-align: center;
-            padding: 16px 24px;
-            border-radius: 8px;
+            text-align: center !important;
+            padding: 12px 16px !important;
+            border-radius: 8px !important;
             /* 角丸 */
-            box-shadow: 0 5px 0 #003a94;
-            /* 下部分の濃い影で立体感を出す */
-            box-sizing: border-box;
-            transition: all 0.1s;
-            font-size: 16px;
-            line-height: 1.5;
+            box-shadow: 0 5px 0 #003a94 !important;
+            /* 下の影 */
+            box-sizing: border-box !important;
+            font-size: 15px !important;
+            line-height: 1.4 !important;
+            transition: transform 0.1s, box-shadow 0.1s;
+            cursor: pointer !important;
         }
 
-        /* クリック（タップ）時の沈むアニメーション */
+        /* クリック時の沈み込みエフェクト */
         a:active {
-            box-shadow: 0 2px 0 #003a94;
-            transform: translateY(3px);
+            box-shadow: 0 2px 0 #003a94 !important;
+            transform: translateY(3px) !important;
         }
 
-        /* 計測用などの画像がボタンレイアウトを崩さないように調整 */
-        img {
-            border: 0;
-            vertical-align: middle;
-            max-width: 100%;
-        }
-
-        /* 1x1ピクセルのビーコン画像等は非表示にする（レイアウト崩れ防止） */
+        /* 画像（バナー画像など）が表示されてしまうとボタンっぽくならないので */
+        /* アイコン的な画像なら良いが、大きなバナーなら非表示にしたい場合は調整が必要。 */
+        /* 今回はテキスト広告前提なので、トラッキングピクセル以外は許容するか、テキストのみにする。 */
+        /* 以下はトラッキングピクセル(1x1)を隠す設定 */
         img[width="1"],
         img[height="1"] {
-            display: none;
+            display: none !important;
+        }
+
+        /* もし画像の周りにリンクがあるタイプで、画像自体を消してテキストだけにしたい場合のみ有効化する（現状はコメントアウト）
+        img { display: none !important; } 
+        */
+
+        /* ValueCommerceの特定のクラスなどが邪魔する場合の対策（念のため） */
+        .vc_ad_container,
+        .vc-ad-container {
+            border: none !important;
+            background: none !important;
+            box-shadow: none !important;
         }
     </style>
 </head>
