@@ -177,6 +177,41 @@ export default function SchedulePage() {
                             </div>
                         </div>
 
+                        {/* WOWOW & SkyPerfectTV Ads */}
+                        <div className="flex flex-wrap justify-center gap-4 mb-10">
+                            <a
+                                href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892412131"
+                                rel="nofollow"
+                                target="_blank"
+                                className="inline-block w-full max-w-[320px] py-4 bg-[#0056b3] text-white text-center font-bold rounded-lg shadow-[0_4px_0_#003d7a] hover:opacity-95 active:shadow-none active:translate-y-[4px] transition-all"
+                            >
+                                <img
+                                    src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892412131"
+                                    height="1"
+                                    width="1"
+                                    className="hidden"
+                                    alt=""
+                                />
+                                WOWOWの最新ラインナップをチェック
+                            </a>
+
+                            <a
+                                href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892412132"
+                                rel="nofollow"
+                                target="_blank"
+                                className="inline-block w-full max-w-[320px] py-4 bg-[#ff9900] text-white text-center font-bold rounded-lg shadow-[0_4px_0_#b36b00] hover:opacity-95 active:shadow-none active:translate-y-[4px] transition-all"
+                            >
+                                <img
+                                    src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892412132"
+                                    height="1"
+                                    width="1"
+                                    className="hidden"
+                                    alt=""
+                                />
+                                スカパー！で華ドラ専門チャンネルを観る
+                            </a>
+                        </div>
+
 
 
                         {/* 直近の放送リスト */}
@@ -260,9 +295,9 @@ export default function SchedulePage() {
                                 {/* 商品2: ネット回線 (Ad) */}
                                 <div className="bg-white rounded p-2 shadow-sm border border-amber-50 flex flex-col items-center hover:shadow transition-shadow">
                                     <div className="w-full h-16 relative mb-1 flex items-center justify-center overflow-hidden bg-white">
-                                        <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405444" rel="nofollow" target="_blank" className="flex items-center justify-center w-full h-full">
+                                        <a href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405444" rel="nofollow" target="_blank" className="flex items-center justify-center w-full h-full">
                                             <img
-                                                src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405444"
+                                                src="https://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405444"
                                                 alt="えーこのドラマ視聴を支えるネット回線"
                                                 className="max-h-full max-w-full object-contain"
                                                 style={{ border: 0 }}
@@ -273,7 +308,7 @@ export default function SchedulePage() {
                                         スカパー！なら、LaLa TVやアジドラなど、華流ドラマの専門チャンネルが勢揃い！
                                     </h3>
                                     <a
-                                        href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405444"
+                                        href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405444"
                                         rel="nofollow"
                                         target="_blank"
                                         className="mt-auto w-full bg-amber-500 hover:bg-amber-400 text-white font-bold py-1 px-2 rounded text-[10px] text-center transition-colors shadow-sm"
