@@ -223,9 +223,7 @@ export default function Home() {
             <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405457" rel="nofollow" target="_blank" className="font-bold text-blue-600 hover:underline text-base leading-tight">
               【フレッツ光】安心と信頼の光回線｜最大79,000円キャッシュバック
             </a>
-            <img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405457" height="1" width="1" style={{ border: 0, width: 1, height: 1, display: 'none' }} alt="" />
           </div>
-          <p className="text-xs text-slate-500 mt-1">えーこのドラマ視聴を支えるネット回線</p>
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-amber-400 mb-6 relative">
@@ -406,9 +404,6 @@ export default function Home() {
           <a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3759936&pid=892405461" rel="nofollow" target="_blank" className="block mx-auto rounded-lg shadow-md overflow-hidden hover:opacity-95 transition-opacity" style={{ maxWidth: '468px' }}>
             <img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3759936&pid=892405461" style={{ border: 0, width: '100%', height: 'auto' }} alt="えーこのドラマ視聴を支えるネット回線" />
           </a>
-          <p className="text-xs text-slate-500 mt-1">
-            えーこのドラマ視聴を支えるネット回線
-          </p>
         </div>
       </div>
 
