@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     title: "中国ドラマ コンシェルジュ | おすすめ作品を診断",
     description: "「次に見るドラマが決まらない…」を解決！診断ガチャで新しいドラマに出会えます！",
   },
+  verification: {
+    google: '74X2Fd8viuJOSKc6371y3aA21rb8OvxHTc9YG7TxIu0',
+  },
 };
 
 export default function RootLayout({
