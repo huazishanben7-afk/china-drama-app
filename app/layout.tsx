@@ -28,6 +28,24 @@ export const metadata: Metadata = {
     title: '中国ドラマ',
     statusBarStyle: 'default',
   },
+  // SEO Canonical設定
+  metadataBase: new URL('https://china-drama-app.pages.dev'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "中国ドラマ コンシェルジュ | おすすめ作品を診断",
+    description: "「次に見るドラマが決まらない…」を解決！診断ガチャで新しいドラマに出会えます！",
+    url: 'https://china-drama-app.pages.dev',
+    siteName: '中国ドラマ コンシェルジュ',
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "中国ドラマ コンシェルジュ | おすすめ作品を診断",
+    description: "「次に見るドラマが決まらない…」を解決！診断ガチャで新しいドラマに出会えます！",
+  },
 };
 
 export default function RootLayout({
