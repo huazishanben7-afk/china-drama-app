@@ -1,43 +1,10 @@
 [
   {
-    "title": "風の吹く場所へ〜love yourself〜",
-    "url": "https://poupe.hatenadiary.jp/entry/2024/11/16/%E3%80%8E%E5%8E%BB%E6%9C%89%E9%A3%8E%E7%9A%84%E5%9C%B0%E6%96%B9%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "BS12",
-    "scheduleText": "BS12 12-29 07:00, 12-30 07:00, 12-31 07:00, 01-01 07:00, 01-02 07:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "07:00"
-      },
-      {
-        "date": "2025-12-30",
-        "startTime": "07:00"
-      },
-      {
-        "date": "2025-12-31",
-        "startTime": "07:00"
-      },
-      {
-        "date": "2026-01-01",
-        "startTime": "07:00"
-      },
-      {
-        "date": "2026-01-02",
-        "startTime": "07:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/11/16/%E3%80%8E%E5%8E%BB%E6%9C%89%E9%A3%8E%E7%9A%84%E5%9C%B0%E6%96%B9%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
     "title": "蜀紅錦〜紡がれる夢〜",
     "url": "https://poupe.hatenadiary.jp/entry/2024/11/30/%E3%80%8E%E8%9C%80%E9%8C%A6%E4%BA%BA%E5%AE%B6%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
     "channel": "チャンネル銀河",
-    "scheduleText": "チャンネル銀河 12-29 07:00, 12-30 07:00, 12-31 07:00, 01-01 07:00, 01-02 07:00",
+    "scheduleText": "チャンネル銀河 12-30 07:00, 12-31 07:00, 01-01 07:00, 01-02 07:00",
     "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "07:00"
-      },
       {
         "date": "2025-12-30",
         "startTime": "07:00"
@@ -58,13 +25,38 @@
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/11/30/%E3%80%8E%E8%9C%80%E9%8C%A6%E4%BA%BA%E5%AE%B6%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
   },
   {
-    "title": "華◆恋心が芽吹く頃〜Blooming Days〜＃２３［字］",
-    "url": "https://poupe.hatenadiary.jp/entry/2023/10/24/%E3%80%8E%E6%AD%B3%E6%AD%B3%E9%9D%92%E8%93%AE%E3%80%8F_%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "LaLa TV",
-    "scheduleText": "LaLa TV 12-29 07:00",
+    "title": "風の吹く場所へ〜love yourself〜",
+    "url": "https://poupe.hatenadiary.jp/entry/2024/11/16/%E3%80%8E%E5%8E%BB%E6%9C%89%E9%A3%8E%E7%9A%84%E5%9C%B0%E6%96%B9%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "BS12",
+    "scheduleText": "BS12 12-30 07:00, 12-31 07:00, 01-01 07:00, 01-02 07:00",
     "nextBroadcasts": [
       {
-        "date": "2025-12-29",
+        "date": "2025-12-30",
+        "startTime": "07:00"
+      },
+      {
+        "date": "2025-12-31",
+        "startTime": "07:00"
+      },
+      {
+        "date": "2026-01-01",
+        "startTime": "07:00"
+      },
+      {
+        "date": "2026-01-02",
+        "startTime": "07:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/11/16/%E3%80%8E%E5%8E%BB%E6%9C%89%E9%A3%8E%E7%9A%84%E5%9C%B0%E6%96%B9%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "華◆恋心が芽吹く頃〜Blooming Days〜＃２４［字］",
+    "url": "https://poupe.hatenadiary.jp/entry/2023/10/24/%E3%80%8E%E6%AD%B3%E6%AD%B3%E9%9D%92%E8%93%AE%E3%80%8F_%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "LaLa TV",
+    "scheduleText": "LaLa TV 12-30 07:00",
+    "nextBroadcasts": [
+      {
+        "date": "2025-12-30",
         "startTime": "07:00"
       }
     ],
@@ -74,23 +66,23 @@
     "title": "華◆猟罪図鑑〜見えない肖像画〜",
     "url": "https://poupe.hatenadiary.jp/entry/2023/01/20/%E7%8C%9F%E7%BD%AA%E5%9B%B3%E9%91%91_%E3%80%9C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%84%E8%82%96%E5%83%8F%E7%94%BB%E3%80%9C_%E5%85%A8%E8%A9%B1%E6%84%9F%E6%83%B3",
     "channel": "衛星劇場",
-    "scheduleText": "衛星劇場 12-29 07:30",
+    "scheduleText": "衛星劇場 12-30 07:30",
     "nextBroadcasts": [
       {
-        "date": "2025-12-29",
+        "date": "2025-12-30",
         "startTime": "07:30"
       }
     ],
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/01/20/%E7%8C%9F%E7%BD%AA%E5%9B%B3%E9%91%91_%E3%80%9C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%84%E8%82%96%E5%83%8F%E7%94%BB%E3%80%9C_%E5%85%A8%E8%A9%B1%E6%84%9F%E6%83%B3"
   },
   {
-    "title": "華◆猟罪図鑑〜見えない肖像画〜＃４[字]【連日一挙】　▼タン・ジェンツー",
+    "title": "華◆猟罪図鑑〜見えない肖像画〜＃５[字]【連日一挙】　▼タン・ジェンツー",
     "url": "https://poupe.hatenadiary.jp/entry/2023/01/20/%E7%8C%9F%E7%BD%AA%E5%9B%B3%E9%91%91_%E3%80%9C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%84%E8%82%96%E5%83%8F%E7%94%BB%E3%80%9C_%E5%85%A8%E8%A9%B1%E6%84%9F%E6%83%B3",
     "channel": "衛星劇場",
-    "scheduleText": "衛星劇場 12-29 07:30",
+    "scheduleText": "衛星劇場 12-30 07:30",
     "nextBroadcasts": [
       {
-        "date": "2025-12-29",
+        "date": "2025-12-30",
         "startTime": "07:30"
       }
     ],
@@ -98,14 +90,10 @@
   },
   {
     "title": "中国ドラマ「DUST〜十三年の追憶〜」",
-    "url": "https://bangumi.org/tv_events/AlDwEx1T4AI?from=search",
+    "url": "https://bangumi.org/tv_events/AlEAEx1VgAI?from=search",
     "channel": "チャンネル銀河",
-    "scheduleText": "チャンネル銀河 12-29 09:30, 12-30 09:30",
+    "scheduleText": "チャンネル銀河 12-30 09:30",
     "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "09:30"
-      },
       {
         "date": "2025-12-30",
         "startTime": "09:30"
@@ -113,13 +101,13 @@
     ]
   },
   {
-    "title": "中国◇贅婿［ぜいせい］〜ムコ殿は天才策士〜　＃２４（字幕版）",
+    "title": "中国◇贅婿［ぜいせい］〜ムコ殿は天才策士〜　＃２５（字幕版）",
     "url": "https://poupe.hatenadiary.jp/entry/2022/06/09/%E3%80%8E%E8%B4%85%E5%A9%BF_%E3%80%9C%E3%83%A0%E3%82%B3%E6%AE%BF%E3%81%AF%E5%A4%A9%E6%89%8D%E7%AD%96%E5%A3%AB%E3%80%9C%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF",
     "channel": "J:COM BS",
-    "scheduleText": "J:COM BS 12-29 10:00",
+    "scheduleText": "J:COM BS 12-30 10:00",
     "nextBroadcasts": [
       {
-        "date": "2025-12-29",
+        "date": "2025-12-30",
         "startTime": "10:00"
       }
     ],
@@ -129,12 +117,8 @@
     "title": "日本初◆中国ドラマ「春花焔〜Kill Me Love Me〜」",
     "url": "https://poupe.hatenadiary.jp/entry/2024/10/14/%E3%80%8E%E6%98%A5%E8%8A%B1%E7%84%94%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
     "channel": "チャンネル銀河",
-    "scheduleText": "チャンネル銀河 12-29 13:00, 12-30 13:00, 12-31 13:00, 01-01 13:00, 01-02 13:00",
+    "scheduleText": "チャンネル銀河 12-30 13:00, 12-31 13:00, 01-01 13:00, 01-02 13:00",
     "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "13:00"
-      },
       {
         "date": "2025-12-30",
         "startTime": "13:00"
@@ -158,12 +142,8 @@
     "title": "中国時代劇明蘭～才媛の春～",
     "url": "https://poupe.hatenadiary.jp/entry/2022/04/24/%E3%80%8E%E6%98%8E%E8%98%AD_%E3%80%9C%E6%89%8D%E5%AA%9B%E3%81%AE%E6%98%A5%E3%80%9C%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
     "channel": "BS11",
-    "scheduleText": "BS11 12-29 13:00, 12-30 13:00, 12-31 13:00, 01-01 13:00, 01-02 13:00",
+    "scheduleText": "BS11 12-30 13:00, 12-31 13:00, 01-01 13:00, 01-02 13:00, 01-05 13:00",
     "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "13:00"
-      },
       {
         "date": "2025-12-30",
         "startTime": "13:00"
@@ -178,379 +158,14 @@
       },
       {
         "date": "2026-01-02",
+        "startTime": "13:00"
+      },
+      {
+        "date": "2026-01-05",
         "startTime": "13:00"
       }
     ],
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2022/04/24/%E3%80%8E%E6%98%8E%E8%98%AD_%E3%80%9C%E6%89%8D%E5%AA%9B%E3%81%AE%E6%98%A5%E3%80%9C%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "華◆蓮花楼（れんかろう）＃３０［字］チョン・イー主演",
-    "url": "https://poupe.hatenadiary.jp/entry/2023/07/24/%E3%80%8E%E8%93%AE%E8%8A%B1%E6%A5%BC%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "LaLa TV",
-    "scheduleText": "LaLa TV 12-29 14:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "14:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/07/24/%E3%80%8E%E8%93%AE%E8%8A%B1%E6%A5%BC%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "中国時代劇度華年（どかねん）The Princess Royal",
-    "url": "https://poupe.hatenadiary.jp/entry/2024/06/26/%E3%80%8E%E5%BA%A6%E8%8F%AF%E5%B9%B4%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "BS11",
-    "scheduleText": "BS11 12-29 15:59, 12-30 15:59, 12-31 15:59, 01-01 15:59",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "15:59"
-      },
-      {
-        "date": "2025-12-30",
-        "startTime": "15:59"
-      },
-      {
-        "date": "2025-12-31",
-        "startTime": "15:59"
-      },
-      {
-        "date": "2026-01-01",
-        "startTime": "15:59"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/06/26/%E3%80%8E%E5%BA%A6%E8%8F%AF%E5%B9%B4%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "中国時代劇大宋宮詞 ～愛と策謀の宮廷絵巻～",
-    "url": "https://poupe.hatenadiary.jp/entry/2022/12/07/%E3%80%8E%E5%A4%A7%E5%AE%8B%E5%AE%AE%E8%A9%9E_%EF%BD%9E%E6%84%9B%E3%81%A8%E7%AD%96%E8%AC%80%E3%81%AE%E5%AE%AE%E5%BB%B7%E7%B5%B5%E5%B7%BB%EF%BD%9E%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99",
-    "channel": "BS11",
-    "scheduleText": "BS11 12-29 15:59, 12-30 15:59, 12-31 15:59, 01-01 15:59",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "15:59"
-      },
-      {
-        "date": "2025-12-30",
-        "startTime": "15:59"
-      },
-      {
-        "date": "2025-12-31",
-        "startTime": "15:59"
-      },
-      {
-        "date": "2026-01-01",
-        "startTime": "15:59"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2022/12/07/%E3%80%8E%E5%A4%A7%E5%AE%8B%E5%AE%AE%E8%A9%9E_%EF%BD%9E%E6%84%9B%E3%81%A8%E7%AD%96%E8%AC%80%E3%81%AE%E5%AE%AE%E5%BB%B7%E7%B5%B5%E5%B7%BB%EF%BD%9E%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99"
-  },
-  {
-    "title": "🈟中国ドラマ 古相思曲 君想う、千年の調べ1、",
-    "url": "https://poupe.hatenadiary.jp/entry/2023/07/19/%E3%80%8E%E5%8F%A4%E7%9B%B8%E6%80%9D%E6%9B%B2%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "BS12",
-    "scheduleText": "BS12 12-29 16:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "16:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/07/19/%E3%80%8E%E5%8F%A4%E7%9B%B8%E6%80%9D%E6%9B%B2%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "中国◇劉皇后の仰せのままに　＃２４（字幕版）",
-    "url": "https://poupe.hatenadiary.jp/entry/2024/03/09/%E3%80%8E%E5%8A%89%E7%9A%87%E5%90%8E%E3%81%AE%E4%BB%B0%E3%81%9B%E3%81%AE%E3%81%BE%E3%81%BE%E3%81%AB%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC",
-    "channel": "J:COM BS",
-    "scheduleText": "J:COM BS 12-29 17:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "17:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/03/09/%E3%80%8E%E5%8A%89%E7%9A%87%E5%90%8E%E3%81%AE%E4%BB%B0%E3%81%9B%E3%81%AE%E3%81%BE%E3%81%BE%E3%81%AB%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC"
-  },
-  {
-    "title": "[中]#28 度華年 The Princess Royal<字>◆チャオ・ジンマイ",
-    "url": "https://poupe.hatenadiary.jp/entry/2024/06/26/%E3%80%8E%E5%BA%A6%E8%8F%AF%E5%B9%B4%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "アジアドラマチックTV（アジドラ）",
-    "scheduleText": "アジアドラマチックTV（アジドラ） 12-29 17:30, 01-05 02:15",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "17:30"
-      },
-      {
-        "date": "2026-01-05",
-        "startTime": "02:15"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/06/26/%E3%80%8E%E5%BA%A6%E8%8F%AF%E5%B9%B4%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "華◆四方館＃１１[字]【日本初放送】　▼タン・ジェンツー、ジョウ・イーラン",
-    "url": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "衛星劇場",
-    "scheduleText": "衛星劇場 12-29 21:00, 01-03 13:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "21:00"
-      },
-      {
-        "date": "2026-01-03",
-        "startTime": "13:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "華◆四方館＃１２[字]【日本初放送】　▼タン・ジェンツー、ジョウ・イーラン",
-    "url": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "衛星劇場",
-    "scheduleText": "衛星劇場 12-29 22:00, 01-03 14:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "22:00"
-      },
-      {
-        "date": "2026-01-03",
-        "startTime": "14:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "TV初◆中国ドラマ「蜀紅錦〜紡がれる夢〜」",
-    "url": "https://poupe.hatenadiary.jp/entry/2024/11/30/%E3%80%8E%E8%9C%80%E9%8C%A6%E4%BA%BA%E5%AE%B6%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "チャンネル銀河",
-    "scheduleText": "チャンネル銀河 12-29 23:00, 12-30 23:00, 12-31 23:00, 01-01 23:00, 01-02 23:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-29",
-        "startTime": "23:00"
-      },
-      {
-        "date": "2025-12-30",
-        "startTime": "23:00"
-      },
-      {
-        "date": "2025-12-31",
-        "startTime": "23:00"
-      },
-      {
-        "date": "2026-01-01",
-        "startTime": "23:00"
-      },
-      {
-        "date": "2026-01-02",
-        "startTime": "23:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/11/30/%E3%80%8E%E8%9C%80%E9%8C%A6%E4%BA%BA%E5%AE%B6%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "星漢燦爛＜せいかんさんらん＞",
-    "url": "https://poupe.hatenadiary.jp/entry/2023/04/15/%E6%98%9F%E6%BC%A2%E7%87%A6%E7%88%9B_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "チャンネル銀河",
-    "scheduleText": "チャンネル銀河 12-30 01:00, 12-31 01:00, 01-01 01:00, 01-02 01:00, 01-03 01:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "01:00"
-      },
-      {
-        "date": "2025-12-31",
-        "startTime": "01:00"
-      },
-      {
-        "date": "2026-01-01",
-        "startTime": "01:00"
-      },
-      {
-        "date": "2026-01-02",
-        "startTime": "01:00"
-      },
-      {
-        "date": "2026-01-03",
-        "startTime": "01:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/04/15/%E6%98%9F%E6%BC%A2%E7%87%A6%E7%88%9B_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "華◆マイ・ラブ スーパースター＃１９［字］",
-    "url": "https://tvguide.myjcom.jp/r/?id=055720251230010000",
-    "channel": "LaLa TV",
-    "scheduleText": "LaLa TV 12-30 01:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "01:00"
-      }
-    ]
-  },
-  {
-    "title": "[中]#13 このロマンスはフィクションだから<字>【日本初放送】",
-    "url": "https://tvguide.myjcom.jp/r/?id=055220251230013000",
-    "channel": "アジアドラマチックTV（アジドラ）",
-    "scheduleText": "アジアドラマチックTV（アジドラ） 12-30 01:30",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "01:30"
-      }
-    ]
-  },
-  {
-    "title": "安楽伝",
-    "url": "https://poupe.hatenadiary.jp/entry/2025/04/14/%E3%80%8E%E5%AE%89%E6%A5%BD%E4%BC%9D%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "チャンネル銀河",
-    "scheduleText": "チャンネル銀河 12-30 02:00, 12-30 03:00, 12-31 02:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "02:00"
-      },
-      {
-        "date": "2025-12-30",
-        "startTime": "03:00"
-      },
-      {
-        "date": "2025-12-31",
-        "startTime": "02:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2025/04/14/%E3%80%8E%E5%AE%89%E6%A5%BD%E4%BC%9D%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "華◆マイ・ラブ スーパースター＃２０［字］",
-    "url": "https://tvguide.myjcom.jp/r/?id=055720251230020000",
-    "channel": "LaLa TV",
-    "scheduleText": "LaLa TV 12-30 02:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "02:00"
-      }
-    ]
-  },
-  {
-    "title": "[中]#12 度華年 The Princess Royal<字>◆チャオ・ジンマイ",
-    "url": "https://poupe.hatenadiary.jp/entry/2024/06/26/%E3%80%8E%E5%BA%A6%E8%8F%AF%E5%B9%B4%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "アジアドラマチックTV（アジドラ）",
-    "scheduleText": "アジアドラマチックTV（アジドラ） 12-30 02:30",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "02:30"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/06/26/%E3%80%8E%E5%BA%A6%E8%8F%AF%E5%B9%B4%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "華◆花渓記（かけいき）〜君が空から舞い降りて〜＃２９［字］",
-    "url": "https://tvguide.myjcom.jp/r/?id=055720251230030000",
-    "channel": "LaLa TV",
-    "scheduleText": "LaLa TV 12-30 03:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "03:00"
-      }
-    ]
-  },
-  {
-    "title": "[中]#38 柳舟恋記〜皇子とかりそめの花嫁〜<字>【日本初放送】",
-    "url": "https://poupe.hatenadiary.jp/entry/2024/08/12/%E3%80%8E%E6%9F%B3%E8%88%9F%E8%A8%98%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "アジアドラマチックTV（アジドラ）",
-    "scheduleText": "アジアドラマチックTV（アジドラ） 12-30 05:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "05:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/08/12/%E3%80%8E%E6%9F%B3%E8%88%9F%E8%A8%98%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "双燕秘抄 乱世を舞う二羽の絆",
-    "url": "https://bangumi.org/tv_events/AlEADeOiUAE?from=search",
-    "channel": "BS12",
-    "scheduleText": "BS12 12-30 05:30, 12-31 05:30, 01-01 05:30, 01-02 05:30",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "05:30"
-      },
-      {
-        "date": "2025-12-31",
-        "startTime": "05:30"
-      },
-      {
-        "date": "2026-01-01",
-        "startTime": "05:30"
-      },
-      {
-        "date": "2026-01-02",
-        "startTime": "05:30"
-      }
-    ]
-  },
-  {
-    "title": "中国◇劉皇后の仰せのままに　＃２４（字幕版）[再]",
-    "url": "https://poupe.hatenadiary.jp/entry/2024/03/09/%E3%80%8E%E5%8A%89%E7%9A%87%E5%90%8E%E3%81%AE%E4%BB%B0%E3%81%9B%E3%81%AE%E3%81%BE%E3%81%BE%E3%81%AB%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC",
-    "channel": "J:COM BS",
-    "scheduleText": "J:COM BS 12-30 05:30",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "05:30"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/03/09/%E3%80%8E%E5%8A%89%E7%9A%87%E5%90%8E%E3%81%AE%E4%BB%B0%E3%81%9B%E3%81%AE%E3%81%BE%E3%81%BE%E3%81%AB%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC"
-  },
-  {
-    "title": "華◆恋心が芽吹く頃〜Blooming Days〜＃２４［字］",
-    "url": "https://poupe.hatenadiary.jp/entry/2023/10/24/%E3%80%8E%E6%AD%B3%E6%AD%B3%E9%9D%92%E8%93%AE%E3%80%8F_%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "LaLa TV",
-    "scheduleText": "LaLa TV 12-30 07:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "07:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/10/24/%E3%80%8E%E6%AD%B3%E6%AD%B3%E9%9D%92%E8%93%AE%E3%80%8F_%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "華◆猟罪図鑑〜見えない肖像画〜＃５[字]【連日一挙】　▼タン・ジェンツー",
-    "url": "https://poupe.hatenadiary.jp/entry/2023/01/20/%E7%8C%9F%E7%BD%AA%E5%9B%B3%E9%91%91_%E3%80%9C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%84%E8%82%96%E5%83%8F%E7%94%BB%E3%80%9C_%E5%85%A8%E8%A9%B1%E6%84%9F%E6%83%B3",
-    "channel": "衛星劇場",
-    "scheduleText": "衛星劇場 12-30 07:30",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "07:30"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/01/20/%E7%8C%9F%E7%BD%AA%E5%9B%B3%E9%91%91_%E3%80%9C%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%84%E8%82%96%E5%83%8F%E7%94%BB%E3%80%9C_%E5%85%A8%E8%A9%B1%E6%84%9F%E6%83%B3"
-  },
-  {
-    "title": "中国◇贅婿［ぜいせい］〜ムコ殿は天才策士〜　＃２５（字幕版）",
-    "url": "https://poupe.hatenadiary.jp/entry/2022/06/09/%E3%80%8E%E8%B4%85%E5%A9%BF_%E3%80%9C%E3%83%A0%E3%82%B3%E6%AE%BF%E3%81%AF%E5%A4%A9%E6%89%8D%E7%AD%96%E5%A3%AB%E3%80%9C%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF",
-    "channel": "J:COM BS",
-    "scheduleText": "J:COM BS 12-30 10:00",
-    "nextBroadcasts": [
-      {
-        "date": "2025-12-30",
-        "startTime": "10:00"
-      }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2022/06/09/%E3%80%8E%E8%B4%85%E5%A9%BF_%E3%80%9C%E3%83%A0%E3%82%B3%E6%AE%BF%E3%81%AF%E5%A4%A9%E6%89%8D%E7%AD%96%E5%A3%AB%E3%80%9C%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF"
   },
   {
     "title": "華◆蓮花楼（れんかろう）＃３１［字］チョン・イー主演",
@@ -564,6 +179,56 @@
       }
     ],
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/07/24/%E3%80%8E%E8%93%AE%E8%8A%B1%E6%A5%BC%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "中国時代劇度華年（どかねん）The Princess Royal",
+    "url": "https://poupe.hatenadiary.jp/entry/2024/06/26/%E3%80%8E%E5%BA%A6%E8%8F%AF%E5%B9%B4%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "BS11",
+    "scheduleText": "BS11 12-30 15:59, 12-31 15:59, 01-01 15:59, 01-05 15:59",
+    "nextBroadcasts": [
+      {
+        "date": "2025-12-30",
+        "startTime": "15:59"
+      },
+      {
+        "date": "2025-12-31",
+        "startTime": "15:59"
+      },
+      {
+        "date": "2026-01-01",
+        "startTime": "15:59"
+      },
+      {
+        "date": "2026-01-05",
+        "startTime": "15:59"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/06/26/%E3%80%8E%E5%BA%A6%E8%8F%AF%E5%B9%B4%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "中国時代劇大宋宮詞 ～愛と策謀の宮廷絵巻～",
+    "url": "https://poupe.hatenadiary.jp/entry/2022/12/07/%E3%80%8E%E5%A4%A7%E5%AE%8B%E5%AE%AE%E8%A9%9E_%EF%BD%9E%E6%84%9B%E3%81%A8%E7%AD%96%E8%AC%80%E3%81%AE%E5%AE%AE%E5%BB%B7%E7%B5%B5%E5%B7%BB%EF%BD%9E%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99",
+    "channel": "BS11",
+    "scheduleText": "BS11 12-30 15:59, 12-31 15:59, 01-01 15:59, 01-05 15:59",
+    "nextBroadcasts": [
+      {
+        "date": "2025-12-30",
+        "startTime": "15:59"
+      },
+      {
+        "date": "2025-12-31",
+        "startTime": "15:59"
+      },
+      {
+        "date": "2026-01-01",
+        "startTime": "15:59"
+      },
+      {
+        "date": "2026-01-05",
+        "startTime": "15:59"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2022/12/07/%E3%80%8E%E5%A4%A7%E5%AE%8B%E5%AE%AE%E8%A9%9E_%EF%BD%9E%E6%84%9B%E3%81%A8%E7%AD%96%E8%AC%80%E3%81%AE%E5%AE%AE%E5%BB%B7%E7%B5%B5%E5%B7%BB%EF%BD%9E%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99"
   },
   {
     "title": "古相思曲〜君想う、千年の調べ〜3、",
@@ -643,6 +308,56 @@
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2025/03/01/%E3%80%8E%E4%BC%BC%E9%8C%A6%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
   },
   {
+    "title": "TV初◆中国ドラマ「蜀紅錦〜紡がれる夢〜」",
+    "url": "https://poupe.hatenadiary.jp/entry/2024/11/30/%E3%80%8E%E8%9C%80%E9%8C%A6%E4%BA%BA%E5%AE%B6%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "チャンネル銀河",
+    "scheduleText": "チャンネル銀河 12-30 23:00, 12-31 23:00, 01-01 23:00, 01-02 23:00",
+    "nextBroadcasts": [
+      {
+        "date": "2025-12-30",
+        "startTime": "23:00"
+      },
+      {
+        "date": "2025-12-31",
+        "startTime": "23:00"
+      },
+      {
+        "date": "2026-01-01",
+        "startTime": "23:00"
+      },
+      {
+        "date": "2026-01-02",
+        "startTime": "23:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/11/30/%E3%80%8E%E8%9C%80%E9%8C%A6%E4%BA%BA%E5%AE%B6%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "星漢燦爛＜せいかんさんらん＞",
+    "url": "https://poupe.hatenadiary.jp/entry/2023/04/15/%E6%98%9F%E6%BC%A2%E7%87%A6%E7%88%9B_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "チャンネル銀河",
+    "scheduleText": "チャンネル銀河 12-31 01:00, 01-01 01:00, 01-02 01:00, 01-03 01:00",
+    "nextBroadcasts": [
+      {
+        "date": "2025-12-31",
+        "startTime": "01:00"
+      },
+      {
+        "date": "2026-01-01",
+        "startTime": "01:00"
+      },
+      {
+        "date": "2026-01-02",
+        "startTime": "01:00"
+      },
+      {
+        "date": "2026-01-03",
+        "startTime": "01:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/04/15/%E6%98%9F%E6%BC%A2%E7%87%A6%E7%88%9B_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
     "title": "華◆マイ・ラブ スーパースター＃２１［字］",
     "url": "https://tvguide.myjcom.jp/r/?id=055720251231010000",
     "channel": "LaLa TV",
@@ -665,6 +380,19 @@
         "startTime": "01:30"
       }
     ]
+  },
+  {
+    "title": "安楽伝",
+    "url": "https://poupe.hatenadiary.jp/entry/2025/04/14/%E3%80%8E%E5%AE%89%E6%A5%BD%E4%BC%9D%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "チャンネル銀河",
+    "scheduleText": "チャンネル銀河 12-31 02:00",
+    "nextBroadcasts": [
+      {
+        "date": "2025-12-31",
+        "startTime": "02:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2025/04/14/%E3%80%8E%E5%AE%89%E6%A5%BD%E4%BC%9D%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
   },
   {
     "title": "華◆マイ・ラブ スーパースター＃２２［字］",
@@ -715,6 +443,26 @@
       }
     ],
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/08/12/%E3%80%8E%E6%9F%B3%E8%88%9F%E8%A8%98%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "双燕秘抄 乱世を舞う二羽の絆",
+    "url": "https://bangumi.org/tv_events/AlEQDeOkAAE?from=search",
+    "channel": "BS12",
+    "scheduleText": "BS12 12-31 05:30, 01-01 05:30, 01-02 05:30",
+    "nextBroadcasts": [
+      {
+        "date": "2025-12-31",
+        "startTime": "05:30"
+      },
+      {
+        "date": "2026-01-01",
+        "startTime": "05:30"
+      },
+      {
+        "date": "2026-01-02",
+        "startTime": "05:30"
+      }
+    ]
   },
   {
     "title": "中国◇劉皇后の仰せのままに　＃２５（字幕版）[再]",
@@ -1166,11 +914,15 @@
     "title": "[中]#18 千輪桃花〜永遠に咲き誇る愛〜<字>【日本初放送】",
     "url": "https://poupe.hatenadiary.jp/entry/2025/01/02/%E3%80%8E%E5%8D%83%E6%9C%B5%E6%A1%83%E8%8A%B1%E4%B8%80%E4%B8%96%E5%BC%80%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
     "channel": "アジアドラマチックTV（アジドラ）",
-    "scheduleText": "アジアドラマチックTV（アジドラ） 01-02 17:30",
+    "scheduleText": "アジアドラマチックTV（アジドラ） 01-02 17:30, 01-10 02:30",
     "nextBroadcasts": [
       {
         "date": "2026-01-02",
         "startTime": "17:30"
+      },
+      {
+        "date": "2026-01-10",
+        "startTime": "02:30"
       }
     ],
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2025/01/02/%E3%80%8E%E5%8D%83%E6%9C%B5%E6%A1%83%E8%8A%B1%E4%B8%80%E4%B8%96%E5%BC%80%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
@@ -1269,7 +1021,7 @@
     "title": "中国ドラマ「情刺 愛讐の宮廷」 一挙放送",
     "url": "https://bangumi.org/tv_events/AlFAEsx_8AI?from=search",
     "channel": "日テレプラス",
-    "scheduleText": "日テレプラス 01-03 08:00, 01-03 08:20, 01-03 08:40",
+    "scheduleText": "日テレプラス 01-03 08:00, 01-03 08:20, 01-03 08:40, 01-03 09:00, 01-03 09:20, 01-03 09:40, 01-03 10:00, 01-03 10:25, 01-03 10:45, 01-03 11:05, 01-03 11:25, 01-03 11:45, 01-03 12:10",
     "nextBroadcasts": [
       {
         "date": "2026-01-03",
@@ -1282,8 +1034,74 @@
       {
         "date": "2026-01-03",
         "startTime": "08:40"
+      },
+      {
+        "date": "2026-01-03",
+        "startTime": "09:00"
+      },
+      {
+        "date": "2026-01-03",
+        "startTime": "09:20"
+      },
+      {
+        "date": "2026-01-03",
+        "startTime": "09:40"
+      },
+      {
+        "date": "2026-01-03",
+        "startTime": "10:00"
+      },
+      {
+        "date": "2026-01-03",
+        "startTime": "10:25"
+      },
+      {
+        "date": "2026-01-03",
+        "startTime": "10:45"
+      },
+      {
+        "date": "2026-01-03",
+        "startTime": "11:05"
+      },
+      {
+        "date": "2026-01-03",
+        "startTime": "11:25"
+      },
+      {
+        "date": "2026-01-03",
+        "startTime": "11:45"
+      },
+      {
+        "date": "2026-01-03",
+        "startTime": "12:10"
       }
     ]
+  },
+  {
+    "title": "華◆四方館＃１１[字]【日本初放送】　▼タン・ジェンツー、ジョウ・イーラン",
+    "url": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "衛星劇場",
+    "scheduleText": "衛星劇場 01-03 13:00",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-03",
+        "startTime": "13:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "華◆四方館＃１２[字]【日本初放送】　▼タン・ジェンツー、ジョウ・イーラン",
+    "url": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "衛星劇場",
+    "scheduleText": "衛星劇場 01-03 14:00",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-03",
+        "startTime": "14:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
   },
   {
     "title": "華◆寧安如夢（ねいあんにょむ）〜宮廷にふたたび舞い降りる愛〜＃３０［字］",
@@ -1444,11 +1262,15 @@
     "title": "華◆風起洛陽〜神都に翔ける蒼き炎〜＃１５[字]",
     "url": "https://poupe.hatenadiary.jp/entry/2024/03/13/%E3%80%8E%E9%A2%A8%E8%B5%B7%E6%B4%9B%E9%99%BD%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
     "channel": "衛星劇場",
-    "scheduleText": "衛星劇場 01-04 22:00",
+    "scheduleText": "衛星劇場 01-04 22:00, 01-10 06:00",
     "nextBroadcasts": [
       {
         "date": "2026-01-04",
         "startTime": "22:00"
+      },
+      {
+        "date": "2026-01-10",
+        "startTime": "06:00"
       }
     ],
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/03/13/%E3%80%8E%E9%A2%A8%E8%B5%B7%E6%B4%9B%E9%99%BD%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
@@ -1457,11 +1279,15 @@
     "title": "華◆風起洛陽〜神都に翔ける蒼き炎〜＃１６[字]",
     "url": "https://poupe.hatenadiary.jp/entry/2024/03/13/%E3%80%8E%E9%A2%A8%E8%B5%B7%E6%B4%9B%E9%99%BD%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
     "channel": "衛星劇場",
-    "scheduleText": "衛星劇場 01-04 23:00",
+    "scheduleText": "衛星劇場 01-04 23:00, 01-10 07:00",
     "nextBroadcasts": [
       {
         "date": "2026-01-04",
         "startTime": "23:00"
+      },
+      {
+        "date": "2026-01-10",
+        "startTime": "07:00"
       }
     ],
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/03/13/%E3%80%8E%E9%A2%A8%E8%B5%B7%E6%B4%9B%E9%99%BD%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
@@ -1477,6 +1303,19 @@
         "startTime": "23:45"
       }
     ]
+  },
+  {
+    "title": "[中]#28 度華年 The Princess Royal<字>◆チャオ・ジンマイ",
+    "url": "https://poupe.hatenadiary.jp/entry/2024/06/26/%E3%80%8E%E5%BA%A6%E8%8F%AF%E5%B9%B4%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "アジアドラマチックTV（アジドラ）",
+    "scheduleText": "アジアドラマチックTV（アジドラ） 01-05 02:15",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-05",
+        "startTime": "02:15"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/06/26/%E3%80%8E%E5%BA%A6%E8%8F%AF%E5%B9%B4%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
   },
   {
     "title": "【中国時代劇】四海重明〜恋が光となる、その時まで〜＃１９[字]▼ジャン・リンホー",
@@ -1611,11 +1450,15 @@
     "title": "華◆四方館＃１３[字]【日本初放送】　▼タン・ジェンツー、ジョウ・イーラン",
     "url": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
     "channel": "衛星劇場",
-    "scheduleText": "衛星劇場 01-05 21:00",
+    "scheduleText": "衛星劇場 01-05 21:00, 01-10 13:00",
     "nextBroadcasts": [
       {
         "date": "2026-01-05",
         "startTime": "21:00"
+      },
+      {
+        "date": "2026-01-10",
+        "startTime": "13:00"
       }
     ],
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
@@ -1624,11 +1467,15 @@
     "title": "華◆四方館＃１４[字]【日本初放送】　▼タン・ジェンツー、ジョウ・イーラン",
     "url": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
     "channel": "衛星劇場",
-    "scheduleText": "衛星劇場 01-05 22:00",
+    "scheduleText": "衛星劇場 01-05 22:00, 01-10 14:00",
     "nextBroadcasts": [
       {
         "date": "2026-01-05",
         "startTime": "22:00"
+      },
+      {
+        "date": "2026-01-10",
+        "startTime": "14:00"
       }
     ],
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/08/23/%E3%80%8E%E5%9B%9B%E6%96%B9%E9%A4%A8%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
@@ -2533,5 +2380,121 @@
       }
     ],
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/08/01/%E3%80%8E%E5%9B%9B%E6%B5%B7%E9%87%8D%E6%98%8E%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "華◆玉骨遥（ぎょっこつよう）＃１３［字］シャオ・ジャン主演！",
+    "url": "https://poupe.hatenadiary.jp/entry/2023/07/03/%E3%80%8E%E7%8E%89%E9%AA%A8%E9%81%A5%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "LaLa TV",
+    "scheduleText": "LaLa TV 01-10 01:00",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-10",
+        "startTime": "01:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/07/03/%E3%80%8E%E7%8E%89%E9%AA%A8%E9%81%A5%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "[中]#22 このロマンスはフィクションだから<字>【日本初放送】",
+    "url": "https://tvguide.myjcom.jp/r/?id=055220260110013000",
+    "channel": "アジアドラマチックTV（アジドラ）",
+    "scheduleText": "アジアドラマチックTV（アジドラ） 01-10 01:30",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-10",
+        "startTime": "01:30"
+      }
+    ]
+  },
+  {
+    "title": "華◆玉骨遥（ぎょっこつよう）＃１４［字］シャオ・ジャン主演！",
+    "url": "https://poupe.hatenadiary.jp/entry/2023/07/03/%E3%80%8E%E7%8E%89%E9%AA%A8%E9%81%A5%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "LaLa TV",
+    "scheduleText": "LaLa TV 01-10 02:00",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-10",
+        "startTime": "02:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/07/03/%E3%80%8E%E7%8E%89%E9%AA%A8%E9%81%A5%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "華◆祈今朝（ききんちょう）〜失われた記憶、共鳴する愛〜＃６［字］シュー・カイ",
+    "url": "https://poupe.hatenadiary.jp/entry/2024/01/18/%E3%80%8E%E7%A5%88%E4%BB%8A%E6%9C%9D%E3%80%8F_%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "LaLa TV",
+    "scheduleText": "LaLa TV 01-10 03:00",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-10",
+        "startTime": "03:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2024/01/18/%E3%80%8E%E7%A5%88%E4%BB%8A%E6%9C%9D%E3%80%8F_%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "中国◇蓮花楼　＃２３　奇怪な刀傷（字幕版）",
+    "url": "https://poupe.hatenadiary.jp/entry/2023/07/24/%E3%80%8E%E8%93%AE%E8%8A%B1%E6%A5%BC%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "J:COM BS",
+    "scheduleText": "J:COM BS 01-10 09:30",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-10",
+        "startTime": "09:30"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/07/24/%E3%80%8E%E8%93%AE%E8%8A%B1%E6%A5%BC%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "中国◇蓮花楼　＃２４　連帯する殺意（字幕版）",
+    "url": "https://poupe.hatenadiary.jp/entry/2023/07/24/%E3%80%8E%E8%93%AE%E8%8A%B1%E6%A5%BC%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "J:COM BS",
+    "scheduleText": "J:COM BS 01-10 11:00",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-10",
+        "startTime": "11:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/07/24/%E3%80%8E%E8%93%AE%E8%8A%B1%E6%A5%BC%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "中国◇蓮花楼　＃２５　新たな糸口（字幕版）",
+    "url": "https://poupe.hatenadiary.jp/entry/2023/07/24/%E3%80%8E%E8%93%AE%E8%8A%B1%E6%A5%BC%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "J:COM BS",
+    "scheduleText": "J:COM BS 01-10 12:30",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-10",
+        "startTime": "12:30"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/07/24/%E3%80%8E%E8%93%AE%E8%8A%B1%E6%A5%BC%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "華◆寧安如夢（ねいあんにょむ）〜宮廷にふたたび舞い降りる愛〜＃３５［字］",
+    "url": "https://poupe.hatenadiary.jp/entry/2023/11/07/%E3%80%8E%E5%AF%A7%E5%AE%89%E5%A6%82%E5%A4%A2%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "LaLa TV",
+    "scheduleText": "LaLa TV 01-10 14:00",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-10",
+        "startTime": "14:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/11/07/%E3%80%8E%E5%AF%A7%E5%AE%89%E5%A6%82%E5%A4%A2%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
+    "title": "中国◇蓮花楼　＃２６　客桟の謎（字幕版）",
+    "url": "https://poupe.hatenadiary.jp/entry/2023/07/24/%E3%80%8E%E8%93%AE%E8%8A%B1%E6%A5%BC%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "J:COM BS",
+    "scheduleText": "J:COM BS 01-10 14:00",
+    "nextBroadcasts": [
+      {
+        "date": "2026-01-10",
+        "startTime": "14:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/07/24/%E3%80%8E%E8%93%AE%E8%8A%B1%E6%A5%BC%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
   }
 ]
