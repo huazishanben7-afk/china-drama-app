@@ -2,30 +2,46 @@
 import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
-import { DramaSchedule, BroadcastEvent } from './crawl_bangumi'; // Reuse types
+import qs from 'querystring';
+// We keep re-using types from crawl_bangumi locally to avoid import errors if file missing
+// But for now let's define them here to be self-contained or trust existing structure.
+// Actually existing structure imports from './crawl_bangumi'.
+import { DramaSchedule } from './crawl_bangumi';
 
-const API_URL = 'https://tvguide.myjcom.jp/api/getProgramInfo/';
-const TARGET_CHANNELS = [
-    'ホームドラマチャンネル',
-    'アジアドラマチックTV',
-    'J:COM', // Will catch J:COM BS, J:COM TV, etc.
-    'LaLa TV',
-    '衛星劇場'
+const SEARCH_API_URL = 'https://tvguide.myjcom.jp/api/mypage/get_searchresult/';
+
+// Keywords: Expanded to cover missing channels
+const SEARCH_KEYWORDS = [
+    '中国ドラマ',
+    'BS11 ドラマ',
+    '華流',
+    '中国時代劇',
+    '中国' // Catch-all, requires strict filtering
 ];
 
-interface JcomProgram {
-    title: string;
-    startTime: string; // YYYYMMDDHHmmss
-    endTime: string;
-    channelName: string;
-    url: string;
-    summary?: string;
-}
+const TARGET_CHANNELS = [
+    'WOWOW',
+    '衛星劇場',
+    'チャンネル銀河',
+    'LaLa',
+    'アジアドラマ',
+    'アジドラ',
+    'ホームドラマ',
+    'BS11',
+    'BS12',
+    'J:COM',
+    '日テレプラス'
+];
 
-interface JcomResponse {
-    status: number | string;
-    totalCount: number;
-    programs: JcomProgram[];
+interface JcomSearchItem {
+    title: string;
+    cid: string;
+    channel_name: string;
+    start_date: {
+        date: string;
+        timezone: string;
+    };
+    si_genre: string;
 }
 
 interface BlogData {
@@ -35,20 +51,16 @@ interface BlogData {
 
 const CSV_FILE = path.join(process.cwd(), 'public', 'data', 'drama_database_v2.csv');
 
-// --- Helper Functions ---
-
 function loadBlogData(): BlogData[] {
     try {
         if (!fs.existsSync(CSV_FILE)) return [];
         const fileContent = fs.readFileSync(CSV_FILE, 'utf-8');
         const lines = fileContent.split('\n');
         const data: BlogData[] = [];
-
         for (let i = 1; i < lines.length; i++) {
             const line = lines[i].trim();
             if (!line) continue;
             const cols = line.split(',');
-            // Expecting col 1 to be title, col 2 to be URL
             if (cols.length >= 2 && cols[1] && cols[1].startsWith('http')) {
                 data.push({
                     title: cols[0].trim(),
@@ -63,190 +75,239 @@ function loadBlogData(): BlogData[] {
     }
 }
 
+function isChineseDrama(title: string): boolean {
+    const t = title;
+
+    // Positive Indicators
+    if (t.includes('華◆') || t.includes('華流') || t.includes('中国') || t.includes('[中]') || t.includes('【中】')) return true;
+    if (t.includes('蔵海') || t.includes('ザンハイ')) return true; // Explicitly allow Zang Hai
+
+    // Negative Indicators
+    if (t.includes('韓◆') || t.includes('韓流') || t.includes('韓国') || t.includes('[韓]') || t.includes('(韓)')) return false;
+    if (t.includes('台湾') || t.includes('タイ')) return false;
+
+    // Korean Name Patterns
+    if (/(?:チャン|イ|キム|ハン|パク|ユ|シン|カン|チョン|ソン|ジュ|ミン|ソ|オ|ク|コ|チ|ハ)・/.test(t)) return false;
+
+    // Blocklist
+    const blockList = [
+        'シカゴ', 'FBI', 'CSI', 'NCIS', 'DOC', 'ドクター', 'グッド', 'クリミナル',
+        'マダム', 'ミステリー', '事件簿', '警部', '捜査', 'ファイル', 'ブラウン神父',
+        'ヴェラ', 'ブリティッシュ', 'ベイクオフ', 'オール・ライズ', 'クローザー',
+        'ライン・オブ', 'キルミー', '彼女は', '星から', 'ミセン', 'ペク・ドンス',
+        '馬医', '福寿草', '運命の', '三番目', '三姉弟', '優雅な', '白雪姫',
+        '被告人', 'ペントハウス', '応答せよ', 'ブランディング', 'ロマンスは',
+        'チェックイン', 'ウイスキー', 'タワー', 'アルゼンチーナ', 'MURDER',
+        'シーズン', 'Season', 'ＳＩＳＩ',
+        'バラエティ', '音楽', 'ライブ',
+        'モンテ', '快楽', 'ストリッパー', 'ダイアリー', '人妻' // Enhanced Blocklist
+    ];
+
+    if (blockList.some(k => t.includes(k))) return false;
+
+    // Kana Filter
+    const kanaOnly = t.replace(/[^\u3040-\u309F\u30A0-\u30FFー\s]/g, '');
+    if (t.length > 5 && kanaOnly.length > t.length * 0.8) return false;
+
+    return true;
+}
+
 function normalizeTitle(fullTitle: string): string {
-    // 1. Remove obvious prefixes/suffixes
-    let title = fullTitle.replace(/^中国ドラマ\s*/, '');
-    title = title.replace(/^【.*?】/, ''); // 【字】 etc
-    title = title.replace(/^\[.*?\]/, ''); // [新] etc
-    title = title.replace(/【.*?】/g, ''); // Inline tags
+    let title = fullTitle.replace(/^(?:中国|韓流|華流|海外)[◇・]?(?:ドラマ)?\s*/, '');
+    title = title.replace(/^【.*?】/, '').replace(/^\[.*?\]/, '').replace(/【.*?】/g, '').replace(/\[.*?\]/g, '');
 
-    // 2. Remove episode numbers
-    // Case A: (Optional Prefix) + Number + '話' (Explicit episode)
+    // Remove pronunciation guides <...> often found in J:COM (e.g. 蔵海<ザンハイ>伝)
+    title = title.replace(/<.*?>/g, '');
+
     title = title.replace(/(?:第|＃|#)?[0-9０-９]+話/g, '');
-    // Case B: Space + Number + (Optional '話')
     title = title.replace(/[\s　]+(第|＃|#)?[0-9０-９]+(?:話|)/g, '');
-    // Case C: Explicit prefix (第, ＃, #)
     title = title.replace(/(第|＃|#)[0-9０-９]+(?:話|)/g, '');
-
-    // 3. Remove parenthesis info often at end
-    title = title.replace(/[\s　]*（.*?）$/, '');
-    title = title.replace(/[\s　]*＜.*?＞$/, '');
-
-    // 4. Strip surrounding brackets if any
+    title = title.replace(/[\s　]*（.*?）$/, '').replace(/[\s　]*＜.*?＞$/, '').replace(/[\s　]*\(.*?\)$/, '');
     title = title.replace(/^[「『](.*?)[」』]$/, '$1');
-
+    title = title.replace(/^PR\s+/, '');
     return title.trim();
 }
 
-function findBlogEntry(title: string, blogData: BlogData[]): BlogData | undefined {
-    const t1 = title.replace(/\s+/g, '').toLowerCase();
+// Full-width to Half-width conversion for ASCII chars
+function toHalfWidth(str: string): string {
+    return str.replace(/[！-～]/g, function (s) {
+        return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+    });
+}
 
-    // Safety check: if title becomes empty or too short, don't match
+function normalizeChannelName(raw: string): string {
+    const c = toHalfWidth(raw);
+    if (c.includes('WOWOW')) {
+        if (c.includes('プライム')) return 'WOWOWプライム';
+        if (c.includes('ライブ')) return 'WOWOWライブ';
+        if (c.includes('シネマ')) return 'WOWOWシネマ';
+        if (c.includes('4K')) return 'WOWOW 4K';
+        if (c.includes('プラス')) return 'WOWOWプラス';
+        return 'WOWOW';
+    }
+    if (c.includes('BS11')) return 'BS11';
+    if (c.includes('BS12') || c.includes('トゥエルビ')) return 'BS12';
+    if (c.includes('衛星劇場')) return '衛星劇場';
+    if (c.includes('LaLa')) return 'LaLa TV';
+    if (c.includes('アジアドラマ') || c.includes('アジドラ')) return 'アジアドラマチックTV';
+    if (c.includes('ホームドラマ')) return 'ホームドラマチャンネル';
+    if (c.includes('チャンネル銀河')) return 'チャンネル銀河';
+    if (c.includes('日テレプラス')) return '日テレプラス';
+    if (c.includes('J:COM')) return 'J:COM';
+    return c;
+}
+
+function findBlogEntry(title: string, blogData: BlogData[]): BlogData | undefined {
+    // Normalization for matching: remove spaces, lowercase
+    const t1 = title.replace(/[\s　・～〜<\(（\[【]/g, '').toLowerCase();
+    // Simplified matching: check if core title part matches
     if (!t1 || t1.length < 2) return undefined;
 
     return blogData.find(b => {
-        const t2 = b.title.replace(/\s+/g, '').toLowerCase();
+        const t2 = b.title.replace(/[\s　・～〜<\(（\[【]/g, '').toLowerCase();
         if (!t2) return false;
-        // Check mutual inclusion
+        // Check partial match
         return t1.includes(t2) || t2.includes(t1);
     });
 }
 
-
-// Helper to format date
-function formatDateStr(date: Date): { date: string, startTime: string } {
-    const y = date.getFullYear();
-    const m = (date.getMonth() + 1).toString().padStart(2, '0');
-    const d = date.getDate().toString().padStart(2, '0');
-    const h = date.getHours().toString().padStart(2, '0');
-    const min = date.getMinutes().toString().padStart(2, '0');
+function formatDateStr(dateStr: string): { date: string, startTime: string } {
+    // input: "2026-01-03 13:45:00.000000"
+    const d = new Date(dateStr.split('.')[0].replace(/-/g, '/')); // simple parse
+    const y = d.getFullYear();
+    const m = (d.getMonth() + 1).toString().padStart(2, '0');
+    const day = d.getDate().toString().padStart(2, '0');
+    const h = d.getHours().toString().padStart(2, '0');
+    const min = d.getMinutes().toString().padStart(2, '0');
     return {
-        date: `${y}-${m}-${d}`,
+        date: `${y}-${m}-${day}`,
         startTime: `${h}:${min}`
     };
 }
 
 export async function fetchJcomData(): Promise<DramaSchedule[]> {
-    console.log('Starting J:COM crawl...');
+    console.log('Starting J:COM crawl (Multi-Keyword Search Mode)...');
     const schedules: DramaSchedule[] = [];
     const blogDataList = loadBlogData();
     console.log(`Loaded ${blogDataList.length} blog entries for matching.`);
 
-    const limit = 100;
-    let offset = 0;
-    let total = 0;
+    const visitedIds = new Set<string>();
 
-    const MAX_PAGES = 20;
+    for (const keyword of SEARCH_KEYWORDS) {
+        console.log(`Searching for keyword: ${keyword}`);
+        let offset = 0;
+        let hasMore = true;
+        let pageCount = 0;
 
-    try {
-        for (let page = 0; page < MAX_PAGES; page++) {
-            const params = {
-                keyword: '中国',
-                genreId: '31',
-                areaId: 12,
-                limit: limit,
-                offset: offset
-            };
+        while (hasMore && pageCount < 50) { // Safety break
+            try {
+                const params = { keyword, offset };
+                const res = await axios.post(SEARCH_API_URL, qs.stringify(params), {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'User-Agent': 'Mozilla/5.0'
+                    }
+                });
 
-            const response = await axios.get(API_URL, {
-                params,
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-                    'Referer': 'https://www2.myjcom.jp/'
-                }
-            });
-
-            const data = response.data as JcomResponse;
-            if (data.status != 0 || !data.programs || data.programs.length === 0) {
-                break;
-            }
-
-            total = data.totalCount;
-
-            for (const p of data.programs) {
-                // Normalize Channel Names for Display & Filtering
-                if (p.channelName.includes('LaLa')) p.channelName = 'LaLa TV';
-                if (p.channelName.includes('衛星劇場')) p.channelName = '衛星劇場';
-
-                const isTarget = TARGET_CHANNELS.some(t => p.channelName.includes(t));
-                if (!isTarget) continue;
-
-                // User-defined filters to exclude non-Chinese dramas
-                // J:COM BS -> Starts with "中国"
-                // Asian Dramatic TV -> Starts with "[中]"
-                // Home Drama Channel, LaLa TV, Eiseigekijo -> Starts with "華" (often "華◆")
-                // Adding "中国" check for safety
-                if (p.channelName.includes('J:COM') && !p.title.startsWith('中国')) continue;
-                if (p.channelName.includes('アジアドラマチックTV') && !p.title.startsWith('[中]')) continue;
-
-                const requireHana = ['ホームドラマチャンネル', 'LaLa TV', '衛星劇場'];
-                if (requireHana.some(c => p.channelName.includes(c))) {
-                    if (!p.title.startsWith('華') && !p.title.includes('中国')) continue;
+                const body = res.data.body;
+                if (!body || !body.value || body.value.length === 0) {
+                    hasMore = false;
+                    break;
                 }
 
-                // Parse Start Time
-                const y = parseInt(p.startTime.substring(0, 4));
-                const m = parseInt(p.startTime.substring(4, 6)) - 1;
-                const d = parseInt(p.startTime.substring(6, 8));
-                const h = parseInt(p.startTime.substring(8, 10));
-                const min = parseInt(p.startTime.substring(10, 12));
-                const start = new Date(y, m, d, h, min);
+                for (const p of body.value as JcomSearchItem[]) {
+                    // Check if channel is target (Normalize to half-width first)
+                    const normalizedChannel = toHalfWidth(p.channel_name);
+                    const isTarget = TARGET_CHANNELS.some(t => normalizedChannel.includes(t));
+                    if (!isTarget) continue;
 
-                // Format to strings
-                const timeInfo = formatDateStr(start);
+                    // Deduplication by ID (cid+startTime)
+                    const uniqueKey = `${p.cid}_${p.start_date.date}`;
+                    if (visitedIds.has(uniqueKey)) continue;
 
-                // Find or create drama
-                // Verify unique by Title AND Channel to avoid mixing schedules if same drama is on multiple channels
-                // (Bangumi crawler logic might differ, but this is safer for J:COM mixed list)
-                let drama = schedules.find(d => d.title === p.title && d.channel === p.channelName);
-                if (!drama) {
-                    const normalized = normalizeTitle(p.title);
-                    const blogEntry = findBlogEntry(normalized, blogDataList);
-                    if (blogEntry) {
-                        console.log(`[J:COM Link Match] ${p.title} -> ${blogEntry.title}`);
+                    // GENRE FILTER:
+                    // 30 = Domestic (Japan) -> Skip
+                    // 31 = Overseas -> Allow (Filter by blocklist later)
+                    if (p.si_genre === '30') continue;
+
+                    // STRICT FILTER for Generic "中国" keyword
+                    // If we searched specifically for "中国" (very broad), we ONLY accept "31" (Overseas)
+                    if (keyword === '中国' && p.si_genre !== '31') continue;
+
+                    // Filter Logic
+                    if (!isChineseDrama(p.title)) {
+                        continue;
                     }
 
-                    drama = {
-                        title: p.title,
-                        url: blogEntry ? blogEntry.blogUrl : (p.url ? (p.url.startsWith('http') ? p.url : `https://tvguide.myjcom.jp${p.url}`) : ''),
-                        channel: p.channelName,
-                        scheduleText: '', // Will update later
-                        nextBroadcasts: [],
-                        blogUrl: blogEntry?.blogUrl
-                    };
-                    schedules.push(drama);
+                    visitedIds.add(uniqueKey);
+
+                    const displayChannel = normalizeChannelName(p.channel_name);
+                    const normalizedTitle = normalizeTitle(p.title);
+
+                    if (p.title.includes('蔵海')) {
+                        console.log(`[FOUND ZANGHAI] ${p.title} -> ${normalizedTitle} (MATCH BLOG? ${!!findBlogEntry(normalizedTitle, blogDataList)})`);
+                    }
+
+                    // Check duplicate objects logic (same title/channel)
+                    let drama = schedules.find(d => d.title === normalizedTitle && d.channel === displayChannel);
+
+                    if (!drama) {
+                        const blogEntry = findBlogEntry(normalizedTitle, blogDataList);
+                        const targetUrl = blogEntry
+                            ? blogEntry.blogUrl
+                            : `https://tvguide.myjcom.jp/detail/?eid=${p.cid}`;
+
+                        drama = {
+                            title: normalizedTitle,
+                            url: targetUrl,
+                            channel: displayChannel,
+                            scheduleText: '',
+                            nextBroadcasts: [],
+                            blogUrl: blogEntry?.blogUrl
+                        };
+                        schedules.push(drama);
+                    }
+
+                    // Parse Time
+                    const timeInfo = formatDateStr(p.start_date.date);
+                    const exists = drama.nextBroadcasts.some(e =>
+                        e.date === timeInfo.date &&
+                        e.startTime === timeInfo.startTime
+                    );
+                    if (!exists) {
+                        drama.nextBroadcasts.push({
+                            date: timeInfo.date,
+                            startTime: timeInfo.startTime
+                        });
+                    }
                 }
 
+                offset += body.value.length;
+                pageCount++;
+                await new Promise(r => setTimeout(r, 200));
 
-                // Add event if unique
-                const exists = drama.nextBroadcasts.some(e =>
-                    e.date === timeInfo.date &&
-                    e.startTime === timeInfo.startTime
-                );
-                if (!exists) {
-                    drama.nextBroadcasts.push({
-                        date: timeInfo.date,
-                        startTime: timeInfo.startTime
-                    });
-                }
+            } catch (error: any) {
+                console.error(`Error fetching keyword ${keyword}:`, error.message);
+                hasMore = false;
             }
-
-            offset += limit;
-            if (offset >= total) break;
-
-            await new Promise(resolve => setTimeout(resolve, 500));
         }
-
-        // Post-process to generate scheduleText and sort
-        for (const s of schedules) {
-            s.nextBroadcasts.sort((a, b) => {
-                if (a.date !== b.date) return a.date.localeCompare(b.date);
-                return a.startTime.localeCompare(b.startTime);
-            });
-
-            // Format scheduleText: "Channel 12-20 16:00, ..."
-            const times = s.nextBroadcasts.map(b => {
-                const shortDate = b.date.substring(5); // MM-DD
-                return `${shortDate} ${b.startTime}`;
-            }).join(', ');
-            s.scheduleText = `${s.channel} ${times}`;
-        }
-
-        console.log(`J:COM crawl complete. Found ${schedules.length} dramas.`);
-        return schedules;
-
-    } catch (e: any) {
-        console.error('J:COM crawl error:', e.message);
-        return [];
     }
+
+    // Sort and Format
+    for (const s of schedules) {
+        s.nextBroadcasts.sort((a, b) => {
+            if (a.date !== b.date) return a.date.localeCompare(b.date);
+            return a.startTime.localeCompare(b.startTime);
+        });
+
+        const times = s.nextBroadcasts.map(b => {
+            const shortDate = b.date.substring(5); // MM-DD
+            return `${shortDate} ${b.startTime}`;
+        }).join(', ');
+        s.scheduleText = `${s.channel} ${times}`;
+    }
+
+    console.log(`J:COM crawl complete. Found ${schedules.length} unique items.`);
+    return schedules;
 }
