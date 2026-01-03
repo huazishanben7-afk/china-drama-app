@@ -5,7 +5,6 @@ import path from 'path';
 import qs from 'querystring';
 // We keep re-using types from crawl_bangumi locally to avoid import errors if file missing
 // But for now let's define them here to be self-contained or trust existing structure.
-// Actually existing structure imports from './crawl_bangumi'.
 import { DramaSchedule } from './crawl_bangumi';
 
 const SEARCH_API_URL = 'https://tvguide.myjcom.jp/api/mypage/get_searchresult/';
@@ -16,7 +15,7 @@ const SEARCH_KEYWORDS = [
     'BS11 ドラマ',
     '華流',
     '中国時代劇',
-    '中国' // Catch-all, requires strict filtering
+    '中国' // Catch-all, filtered strictly by Genre 31
 ];
 
 const TARGET_CHANNELS = [
@@ -100,7 +99,7 @@ function isChineseDrama(title: string): boolean {
         'チェックイン', 'ウイスキー', 'タワー', 'アルゼンチーナ', 'MURDER',
         'シーズン', 'Season', 'ＳＩＳＩ',
         'バラエティ', '音楽', 'ライブ',
-        'モンテ', '快楽', 'ストリッパー', 'ダイアリー', '人妻' // Enhanced Blocklist
+        'モンテ', '快楽', 'ストリッパー', 'ダイアリー', '人妻'
     ];
 
     if (blockList.some(k => t.includes(k))) return false;
@@ -226,14 +225,10 @@ export async function fetchJcomData(): Promise<DramaSchedule[]> {
                     const uniqueKey = `${p.cid}_${p.start_date.date}`;
                     if (visitedIds.has(uniqueKey)) continue;
 
-                    // GENRE FILTER:
-                    // 30 = Domestic (Japan) -> Skip
-                    // 31 = Overseas -> Allow (Filter by blocklist later)
-                    if (p.si_genre === '30') continue;
-
-                    // STRICT FILTER for Generic "中国" keyword
-                    // If we searched specifically for "中国" (very broad), we ONLY accept "31" (Overseas)
-                    if (keyword === '中国' && p.si_genre !== '31') continue;
+                    // GENRE FILTER (Strict Whitelist):
+                    // ONLY allow '31' (Overseas Drama).
+                    // This is robust against Anime (70), Domestic (30), Info (FF), etc.
+                    if (p.si_genre !== '31') continue;
 
                     // Filter Logic
                     if (!isChineseDrama(p.title)) {
