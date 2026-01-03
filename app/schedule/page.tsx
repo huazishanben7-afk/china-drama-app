@@ -37,7 +37,7 @@ export default function SchedulePage() {
     useEffect(() => {
         const fetchSchedule = async () => {
             try {
-                const res = await fetch('/data/schedule.json');
+                const res = await fetch(`/data/schedule.json?t=${new Date().getTime()}`);
                 if (!res.ok) throw new Error('スケジュールの取得に失敗しました');
                 const data: DramaSchedule[] = await res.json();
                 setSchedules(data);
