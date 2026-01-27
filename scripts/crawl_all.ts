@@ -1,129 +1,25 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { fetchBangumiData, DramaSchedule } from './crawl_bangumi';
-import { fetchBS11Data } from './crawl_bs11';
 import { fetchJcomData } from './crawl_jcom';
 
 const OUTPUT_FILE = path.join(process.cwd(), 'public', 'data', 'schedule.json');
 
 async function main() {
     try {
-        console.log('--- Starting Crawler ---');
+        console.log('--- Starting Crawler (J:COM Unified Edition) ---');
 
-        // 1. Fetch from Bangumi
-        const bangumiData = await fetchBangumiData();
-
-        // 2. Fetch from BS11
-        const bs11Data = await fetchBS11Data();
-
-        // 3. Fetch from J:COM
+        // 1. Fetch from J:COM (Source of Truth)
         const jcomData = await fetchJcomData();
 
-        console.log(`Bangumi items: ${bangumiData.length}`);
-        console.log(`BS11 items: ${bs11Data.length}`);
-        console.log(`J:COM items: ${jcomData.length}`);
+        console.log(`J:COM Total Items: ${jcomData.length}`);
 
-        // 4. Merge Data
-        const mergedMap = new Map<string, DramaSchedule>();
-
-        // Helper to merge events
-        const mergeEvents = (target: DramaSchedule, source: DramaSchedule) => {
-            for (const event of source.nextBroadcasts) {
-                const isDup = target.nextBroadcasts.some(e =>
-                    e.date === event.date && e.startTime === event.startTime
-                );
-                if (!isDup) {
-                    target.nextBroadcasts.push(event);
-                }
-            }
-            // Sort after merging
-            target.nextBroadcasts.sort((a, b) => {
-                if (a.date !== b.date) return a.date.localeCompare(b.date);
-                return a.startTime.localeCompare(b.startTime);
-            });
-        };
-
-        // Priority 1: Bangumi (Richest Data for most channels)
-        for (const d of bangumiData) {
-            mergedMap.set(d.title, d);
-        }
-
-        // Priority 2: BS11 (Specific logic for BS11)
-        for (const d of bs11Data) {
-            if (mergedMap.has(d.title)) {
-                const existing = mergedMap.get(d.title)!;
-                // If existing is from Bangumi but channel is unknown/generic, favor BS11?
-                // Or just merge events.
-                mergeEvents(existing, d);
-
-                // Update channel name if it looks better
-                if (d.channel === 'BS11' && existing.channel !== 'BS11') {
-                    // Maybe keep existing channel name if it's correct, but BS11 script is authority on BS11.
-                    // But Bangumi usually has "BS11イレブン" etc.
-                }
-            } else {
-                mergedMap.set(d.title, d);
-            }
-        }
-
-        // Priority 3: J:COM (Covers missing channels)
-        for (const d of jcomData) {
-            if (mergedMap.has(d.title)) {
-                const existing = mergedMap.get(d.title)!;
-                mergeEvents(existing, d);
-
-                // If J:COM has a better channel name (e.g. Bangumi said "Unknown"), use J:COM?
-                if (existing.channel === 'Unknown Channel' || existing.channel === '') {
-                    existing.channel = d.channel;
-                }
-            } else {
-                mergedMap.set(d.title, d);
-            }
-        }
-
-        // --- VALIDATION START ---
-        // Ensure we actually fetched data. If J:COM or Bangumi fail repeatedly (return 0), we should fail the build
-        // so that we don't overwrite good data with empty data (or commit partial data).
-        if (bangumiData.length === 0) {
-            throw new Error('Bangumi crawler returned 0 items. Possible parsing issue or site change.');
-        }
         if (jcomData.length === 0) {
-            throw new Error('J:COM crawler returned 0 items. Possible API blocking or timeout.');
-        }
-        // --- VALIDATION END ---
-
-        // Re-generate scheduleText for all merged items
-        const allSchedules = Array.from(mergedMap.values());
-        for (const s of allSchedules) {
-            const times = s.nextBroadcasts.map(b => {
-                const shortDate = b.date.substring(5); // MM-DD
-                return `${shortDate} ${b.startTime}`;
-            }).join(', ');
-            s.scheduleText = `${s.channel} ${times}`;
+            console.error('ERROR: J:COM crawler returned 0 items. Check API or Network.');
         }
 
-        // Channel Name Normalization
-        for (const s of allSchedules) {
-            if (s.channel === 'BS12トゥエルビ') {
-                s.channel = 'BS12';
-            } else if (s.channel.includes('ホームドラマチャンネル')) {
-                // Determine if it's the long name or just strict content match
-                // User said: "ホームドラマチャンネルHD　韓流・時代劇・国内ドラマ" -> "ホームドラマチャンネル"
-                if (s.channel.startsWith('ホームドラマチャンネル')) {
-                    s.channel = 'ホームドラマチャンネル';
-                }
-            }
-            // Re-generate scheduleText with new channel name
-            const times = s.nextBroadcasts.map(b => {
-                const shortDate = b.date.substring(5); // MM-DD
-                return `${shortDate} ${b.startTime}`;
-            }).join(', ');
-            s.scheduleText = `${s.channel} ${times}`;
-        }
-
-        // Sort allSchedules by earliest broadcast date
-        allSchedules.sort((a, b) => {
+        // 2. Sort all schedules by earliest broadcast date
+        jcomData.sort((a, b) => {
             const timeA = a.nextBroadcasts.length > 0
                 ? `${a.nextBroadcasts[0].date} ${a.nextBroadcasts[0].startTime}`
                 : '9999-99-99 99:99';
@@ -133,28 +29,33 @@ async function main() {
             return timeA.localeCompare(timeB);
         });
 
-        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(allSchedules, null, 2));
-        console.log(`Saved ${allSchedules.length} items to ${OUTPUT_FILE}`);
+        // 3. Save JSON
+        const jsonDir = path.dirname(OUTPUT_FILE);
+        if (!fs.existsSync(jsonDir)) fs.mkdirSync(jsonDir, { recursive: true });
 
-        // Generate CSV
+        fs.writeFileSync(OUTPUT_FILE, JSON.stringify(jcomData, null, 2));
+        console.log(`Saved ${jcomData.length} items to ${OUTPUT_FILE}`);
+
+        // 4. Generate CSV
         const CSV_FILE = path.join(process.cwd(), 'public', 'data', 'schedule.csv');
         const csvHeader = 'Title,Channel,Schedule,URL\n';
-        const csvRows = allSchedules.map(s => {
+        const csvRows = jcomData.map(s => {
             // Escape quotes and commas
             const title = `"${s.title.replace(/"/g, '""')}"`;
             const channel = `"${s.channel.replace(/"/g, '""')}"`;
             const schedule = `"${s.scheduleText.replace(/"/g, '""')}"`;
-            const url = `"${s.url.replace(/"/g, '""')}"`;
+            // Ensure URL is not undefined
+            const url = `"${(s.url || '').replace(/"/g, '""')}"`;
             return `${title},${channel},${schedule},${url}`;
         }).join('\n');
 
-        fs.writeFileSync(CSV_FILE, '\uFEFF' + csvHeader + csvRows); // Add BOM for Excel compatibility
+        fs.writeFileSync(CSV_FILE, '\uFEFF' + csvHeader + csvRows);
         console.log(`Saved CSV to ${CSV_FILE}`);
 
         console.log('--- Crawl Finished ---');
 
-    } catch (error) {
-        console.error('Crawl failed:', error);
+    } catch (e) {
+        console.error('Crawler failed:', e);
         process.exit(1);
     }
 }

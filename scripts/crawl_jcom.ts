@@ -15,7 +15,11 @@ const SEARCH_KEYWORDS = [
     'BS11 ドラマ',
     '華流',
     '中国時代劇',
-    '中国' // Catch-all, filtered strictly by Genre 31
+    '中国',
+    'BS12',
+    'WOWOW',
+    'チャンネル銀河',
+    '衛星劇場' // Catch-all, filtered strictly by Genre 31
 ];
 
 const TARGET_CHANNELS = [
@@ -228,12 +232,15 @@ export async function fetchJcomData(): Promise<DramaSchedule[]> {
                     // GENRE FILTER (Strict Whitelist):
                     // ONLY allow '31' (Overseas Drama).
                     // This is robust against Anime (70), Domestic (30), Info (FF), etc.
+
+
                     if (p.si_genre !== '31') continue;
 
                     // Filter Logic
                     if (!isChineseDrama(p.title)) {
                         continue;
                     }
+
 
                     visitedIds.add(uniqueKey);
 
