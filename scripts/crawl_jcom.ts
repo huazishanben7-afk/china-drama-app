@@ -103,7 +103,8 @@ function isChineseDrama(title: string): boolean {
         'チェックイン', 'ウイスキー', 'タワー', 'アルゼンチーナ', 'MURDER',
         'シーズン', 'Season', 'ＳＩＳＩ',
         'バラエティ', '音楽', 'ライブ',
-        'モンテ', '快楽', 'ストリッパー', 'ダイアリー', '人妻'
+        'モンテ', '快楽', 'ストリッパー', 'ダイアリー', '人妻',
+        'シャロン', 'ピチ', '取調室', 'LAW', 'ORDER', 'S.W.A.T'
     ];
 
     if (blockList.some(k => t.includes(k))) return false;
