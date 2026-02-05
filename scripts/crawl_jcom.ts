@@ -105,7 +105,7 @@ function isChineseDrama(title: string): boolean {
         'バラエティ', '音楽', 'ライブ',
         'モンテ', '快楽', 'ストリッパー', 'ダイアリー', '人妻',
         'シャロン', 'ピチ', '取調室', 'LAW', 'ORDER', 'S.W.A.T', '英国',
-        'エンド・オブ', 'パリ'
+        'エンド・オブ', 'パリ', '北欧サスペンス', '白夜の連続殺人'
     ];
 
     if (blockList.some(k => t.includes(k))) return false;
