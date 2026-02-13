@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fetchJcomData } from './crawl_jcom';
 
-const OUTPUT_FILE = path.join(process.cwd(), 'public', 'data', 'schedule.json');
+const OUTPUT_FILE = path.join(process.cwd(), 'public', 'data', 'drama_schedule.json');
 
 async function main() {
     try {

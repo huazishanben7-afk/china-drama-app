@@ -2,6 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 
+const JSON_FILE = path.join(process.cwd(), 'public', 'data', 'drama_schedule.json');
 const CSV_FILE = path.join(process.cwd(), 'public', 'data', 'schedule.csv');
 
 const TARGETS = [
@@ -18,8 +19,11 @@ const TARGETS = [
 ];
 
 try {
-    const content = fs.readFileSync(CSV_FILE, 'utf-8');
-    const lines = content.split('\n');
+    const content = fs.readFileSync(JSON_FILE, 'utf-8');
+    const items = JSON.parse(content);
+    // Convert JSON items to string representation for easy grepping
+    const lines = items.map((i: any) => JSON.stringify(i));
+
     let hasError = false;
 
     // 1. Check Total Count
