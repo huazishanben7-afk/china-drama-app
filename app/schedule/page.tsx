@@ -32,28 +32,10 @@ export default function SchedulePage() {
     const [events, setEvents] = useState<FlattenedEvent[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-    const [lastUpdated, setLastUpdated] = useState<string | null>(null);
-
+    const [selectedChannel, setSelectedChannel] = useState<string | null>(null);
     useEffect(() => {
         const fetchSchedule = async () => {
             try {
-                // Metadata Fetch (Optional)
-                try {
-                    const metaRes = await fetch(`/data/metadata.json?t=${new Date().getTime()}`);
-                    if (metaRes.ok) {
-                        const meta = await metaRes.json();
-                        if (meta.lastUpdated) {
-                            const d = new Date(meta.lastUpdated);
-                            setLastUpdated(d.toLocaleString('ja-JP', {
-                                year: 'numeric', month: '2-digit', day: '2-digit',
-                                hour: '2-digit', minute: '2-digit'
-                            }));
-                        }
-                    }
-                } catch (e) {
-                    console.warn('Metadata fetch failed:', e);
-                }
-
                 const res = await fetch(`/data/schedule.json?t=${new Date().getTime()}`);
                 if (!res.ok) throw new Error('スケジュールの取得に失敗しました');
                 const data: DramaSchedule[] = await res.json();
@@ -134,21 +116,14 @@ export default function SchedulePage() {
             {/* ヘッダー */}
             <div className="bg-red-900 text-amber-50 py-6 px-4 shadow-md border-b-4 border-amber-600">
                 <div className="max-w-2xl mx-auto flex items-center justify-between">
-                    <div>
-                        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity mb-1">
-                            <Home size={16} />
-                            <span className="font-bold text-sm">TOPへ戻る</span>
-                        </Link>
-                        <h1 className="text-xl sm:text-2xl font-bold tracking-wider flex items-center gap-2">
-                            <Tv className="text-amber-400" />
-                            放送予定
-                        </h1>
-                        {lastUpdated && (
-                            <p className="text-xs text-amber-200 mt-1 opacity-80">
-                                データ更新: {lastUpdated}
-                            </p>
-                        )}
-                    </div>
+                    <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                        <Home size={20} />
+                        <span className="font-bold">TOPへ戻る</span>
+                    </Link>
+                    <h1 className="text-xl sm:text-2xl font-bold tracking-wider flex items-center gap-2">
+                        <Tv className="text-amber-400" />
+                        放送予定
+                    </h1>
                 </div>
             </div>
 
