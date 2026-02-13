@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Debug and Dump files
+*_dump.html
+*_debug.html
+*_debug.log
+*_debug.png
+*_debug.json
+debug_*.html
+dump_*.html
+*.xml
+rss_*.html
+search_*.html
+scripts.js
+jcom_api.js
+.gemini/
+.antigravity/
+/*.html

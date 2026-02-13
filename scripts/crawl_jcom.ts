@@ -78,7 +78,7 @@ function loadBlogData(): BlogData[] {
     }
 }
 
-function isChineseDrama(title: string): boolean {
+export function isChineseDrama(title: string): boolean {
     const t = title;
 
     // Positive Indicators
@@ -105,7 +105,7 @@ function isChineseDrama(title: string): boolean {
         'バラエティ', '音楽', 'ライブ',
         'モンテ', '快楽', 'ストリッパー', 'ダイアリー', '人妻',
         'シャロン', 'ピチ', '取調室', 'LAW', 'ORDER', 'S.W.A.T', '英国',
-        'エンド・オブ', 'パリ', '北欧サスペンス', '白夜の連続殺人'
+        'DEATH & DETAIL', '事実は語る', '北欧サスペンス', '白夜の連続殺人', 'エンド・オブ', 'パリ'
     ];
 
     if (blockList.some(k => t.includes(k))) return false;
