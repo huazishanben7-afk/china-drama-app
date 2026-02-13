@@ -30,7 +30,10 @@ jobs:
       - name: Run Crawler
         env:
           TZ: 'Asia/Tokyo'
-        run: npm run crawl
+        run: npm run crawl || exit 1
+      
+      - name: Verify Data Integirty
+        run: npx ts-node -P tsconfig.scripts.json scripts/verify_coverage.ts
 
       - name: Check for changes
         id: check_changes

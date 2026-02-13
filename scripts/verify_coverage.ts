@@ -20,17 +20,38 @@ const TARGETS = [
 try {
     const content = fs.readFileSync(CSV_FILE, 'utf-8');
     const lines = content.split('\n');
-    console.log(`Total lines: ${lines.length}`);
+    let hasError = false;
 
+    // 1. Check Total Count
+    if (lines.length < 50) {
+        console.error(`[FAIL] Total items too low: ${lines.length} (Expected > 50)`);
+        hasError = true;
+    } else {
+        console.log(`[OK] Total items: ${lines.length}`);
+    }
+
+    // 2. Check Channel Coverage
     TARGETS.forEach(target => {
-        const found = lines.filter(l => l.includes(target));
-        if (found.length > 0) {
-            console.log(`[OK] ${target}: ${found.length} items`);
+        // Simple string match might be too loose, but let's start with it.
+        // Ideally we parse CSV, but grep-like check is robust enough for "presence".
+        const count = lines.filter(l => l.includes(target)).length;
+        if (count > 0) {
+            console.log(`[OK] ${target}: ${count} items`);
         } else {
-            console.error(`[FAIL] ${target}: 0 items`);
+            console.error(`[FAIL] Missing channel data: ${target}`);
+            hasError = true;
         }
     });
 
+    if (hasError) {
+        console.error('Data verification failed.');
+        process.exit(1);
+    } else {
+        console.log('Data verification passed.');
+        process.exit(0);
+    }
+
 } catch (e) {
-    console.error(e);
+    console.error('Verification script failed:', e);
+    process.exit(1);
 }
