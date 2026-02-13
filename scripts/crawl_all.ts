@@ -14,8 +14,11 @@ async function main() {
 
         console.log(`J:COM Total Items: ${jcomData.length}`);
 
-        if (jcomData.length === 0) {
-            console.error('ERROR: J:COM crawler returned 0 items. Check API or Network.');
+        // SAFETY CHECK: If data is too small, something is wrong. Do not overwrite.
+        if (jcomData.length < 10) {
+            console.error(`CRITICAL ERROR: Fetched only ${jcomData.length} items. This is too low.`);
+            console.error('Aborting save to protect existing data.');
+            process.exit(1); // Fail the workflow
         }
 
         // 2. Sort all schedules by earliest broadcast date

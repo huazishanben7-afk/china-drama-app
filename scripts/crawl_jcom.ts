@@ -194,6 +194,33 @@ function formatDateStr(dateStr: string): { date: string, startTime: string } {
     };
 }
 
+const MAX_RETRIES = 3;
+const RETRY_DELAY_MS = 2000;
+
+async function fetchWithRetry(url: string, data: any, retries = MAX_RETRIES): Promise<any> {
+    for (let i = 0; i < retries; i++) {
+        try {
+            return await axios.post(url, qs.stringify(data), {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'User-Agent': 'Mozilla/5.0'
+                },
+                timeout: 15000 // 15s timeout
+            });
+        } catch (error: any) {
+            const isLastAttempt = i === retries - 1;
+            console.warn(`Attempt ${i + 1}/${retries} failed for ${url}: ${error.message}`);
+
+            if (isLastAttempt) throw error;
+
+            // Wait with exponential backoff
+            const delay = RETRY_DELAY_MS * Math.pow(2, i);
+            await new Promise(resolve => setTimeout(resolve, delay));
+        }
+    }
+}
+
 export async function fetchJcomData(): Promise<DramaSchedule[]> {
     console.log('Starting J:COM crawl (Multi-Keyword Search Mode)...');
     const schedules: DramaSchedule[] = [];
@@ -211,13 +238,7 @@ export async function fetchJcomData(): Promise<DramaSchedule[]> {
         while (hasMore && pageCount < 50) { // Safety break
             try {
                 const params = { keyword, offset };
-                const res = await axios.post(SEARCH_API_URL, qs.stringify(params), {
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                        'X-Requested-With': 'XMLHttpRequest',
-                        'User-Agent': 'Mozilla/5.0'
-                    }
-                });
+                const res = await fetchWithRetry(SEARCH_API_URL, params);
 
                 const body = res.data.body;
                 if (!body || !body.value || body.value.length === 0) {

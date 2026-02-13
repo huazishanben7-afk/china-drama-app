@@ -139,6 +139,26 @@ function parseDateStr(dateStr: string): { date: string, startTime: string } | nu
     };
 }
 
+const MAX_RETRIES = 3;
+const RETRY_DELAY_MS = 2000;
+
+async function fetchWithRetry(url: string, headers: any, retries = MAX_RETRIES): Promise<any> {
+    for (let i = 0; i < retries; i++) {
+        try {
+            return await axios.get(url, { headers, timeout: 15000 });
+        } catch (error: any) {
+            const isLastAttempt = i === retries - 1;
+            console.warn(`[Bangumi] Attempt ${i + 1}/${retries} failed: ${error.message}`);
+
+            if (isLastAttempt) throw error;
+
+            // Wait with exponential backoff
+            const delay = RETRY_DELAY_MS * Math.pow(2, i);
+            await new Promise(resolve => setTimeout(resolve, delay));
+        }
+    }
+}
+
 // --- Main Scraper ---
 
 export async function fetchBangumiData(): Promise<DramaSchedule[]> {
@@ -149,7 +169,7 @@ export async function fetchBangumiData(): Promise<DramaSchedule[]> {
         const blogDataList = loadBlogData();
         console.log(`Loaded ${blogDataList.length} blog entries.`);
 
-        const response = await axios.get(SEARCH_API_URL, { headers: HEADERS });
+        const response = await fetchWithRetry(SEARCH_API_URL, HEADERS);
         const html = response.data;
         const $ = cheerio.load(html);
 
@@ -259,8 +279,8 @@ export async function fetchBangumiData(): Promise<DramaSchedule[]> {
         console.log(`Bangumi found ${results.length} dramas.`);
         return results;
 
-    } catch (error) {
-        console.error('Error scraping Bangumi:', error);
+    } catch (error: any) {
+        console.error('Error scraping Bangumi:', error.message);
         return [];
     }
 }
