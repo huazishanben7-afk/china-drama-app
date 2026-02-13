@@ -81,8 +81,12 @@ function loadBlogData(): BlogData[] {
 export function isChineseDrama(title: string): boolean {
     const t = title;
 
-    // Positive Indicators
-    if (t.includes('華◆') || t.includes('華流') || t.includes('中国') || t.includes('[中]') || t.includes('【中】')) return true;
+    // Positive Indicators (Prioritize 'China' effectively)
+    // ユーザー要望: 「さすがに『中国』って入ってたら優先して」
+    if (t.includes('中国')) return true;
+
+    // Standard Positive Indicators
+    if (t.includes('華◆') || t.includes('華流') || t.includes('[中]') || t.includes('【中】')) return true;
     if (t.includes('蔵海') || t.includes('ザンハイ')) return true; // Explicitly allow Zang Hai
 
     // Negative Indicators
