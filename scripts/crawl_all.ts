@@ -52,6 +52,12 @@ async function main() {
         fs.writeFileSync(CSV_FILE, '\uFEFF' + csvHeader + csvRows);
         console.log(`Saved CSV to ${CSV_FILE}`);
 
+        // 5. Generate Metadata
+        const META_FILE = path.join(process.cwd(), 'public', 'data', 'metadata.json');
+        const meta = { lastUpdated: new Date().toISOString() };
+        fs.writeFileSync(META_FILE, JSON.stringify(meta, null, 2));
+        console.log(`Saved metadata to ${META_FILE}`);
+
         console.log('--- Crawl Finished ---');
 
     } catch (e) {
