@@ -38,7 +38,7 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          if [[ -n $(git status --porcelain public/data/schedule.json public/data/schedule.csv) ]]; then
+          if [[ -n $(git status --porcelain public/data/drama_schedule.json public/data/schedule.csv) ]]; then
             echo "changes_detected=true" >> $GITHUB_OUTPUT
           else
             echo "changes_detected=false" >> $GITHUB_OUTPUT
@@ -49,6 +49,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add public/data/schedule.json public/data/schedule.csv
+          git add public/data/drama_schedule.json public/data/schedule.csv
           git commit -m "chore(data): update drama schedule [skip ci]"
           git push
