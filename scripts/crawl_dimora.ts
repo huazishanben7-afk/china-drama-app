@@ -103,7 +103,7 @@ function isTargetChannel(channel: string): boolean {
     return true;
 }
 
-function isChineseDrama(title: string, channel: string): boolean {
+export function isChineseDrama(title: string, channel: string): boolean {
     const t = title.toLowerCase();
 
     // Explicit Exclusion (Western/Misc)
@@ -114,6 +114,7 @@ function isChineseDrama(title: string, channel: string): boolean {
     if (t.includes('swat') || t.includes('s.w.a.t')) return false;
     if (t.includes('トランスポーター')) return false;
     if (t.includes('アストリッド')) return false;
+    if (t.includes('ヴィエナ・ブラッド') || t.includes('vienna blood')) return false;
 
     // New exclusions for user reported "Keiji Morse" (Endeavour)
     if (t.includes('刑事')) return false; // Detective
