@@ -1,44 +1,15 @@
 [
   {
-    "title": "中国ドラマ「七時吉祥〜エンドレス・ラブ〜」",
-    "url": "https://poupe.hatenadiary.jp/entry/2023/08/11/%E3%80%8E%E4%B8%83%E6%99%82%E5%90%89%E7%A5%A5%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
-    "channel": "日テレプラス",
-    "scheduleText": "日テレプラス 03-09 14:30, 03-10 14:30, 03-11 14:30, 04-03 04:00, 04-06 04:00, 04-07 04:00, 04-08 04:00, 04-09 04:00",
+    "title": "福寿草　「真実を求めて」",
+    "url": "https://tvguide.myjcom.jp/detail/?eid=3_1753603",
+    "channel": "BS11",
+    "scheduleText": "BS11 03-09 14:29",
     "nextBroadcasts": [
       {
         "date": "2026-03-09",
-        "startTime": "14:30"
-      },
-      {
-        "date": "2026-03-10",
-        "startTime": "14:30"
-      },
-      {
-        "date": "2026-03-11",
-        "startTime": "14:30"
-      },
-      {
-        "date": "2026-04-03",
-        "startTime": "04:00"
-      },
-      {
-        "date": "2026-04-06",
-        "startTime": "04:00"
-      },
-      {
-        "date": "2026-04-07",
-        "startTime": "04:00"
-      },
-      {
-        "date": "2026-04-08",
-        "startTime": "04:00"
-      },
-      {
-        "date": "2026-04-09",
-        "startTime": "04:00"
+        "startTime": "14:29"
       }
-    ],
-    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/08/11/%E3%80%8E%E4%B8%83%E6%99%82%E5%90%89%E7%A5%A5%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+    ]
   },
   {
     "title": "墨雨雲間〜美しき復讐〜、 字幕",
@@ -275,6 +246,18 @@
       },
       {
         "date": "2026-03-31",
+        "startTime": "20:00"
+      }
+    ]
+  },
+  {
+    "title": "ドラマ　ブラウン神父　シーズン1 「青い十字架」",
+    "url": "https://tvguide.myjcom.jp/detail/?eid=3_1753303",
+    "channel": "BS12",
+    "scheduleText": "BS12 03-09 20:00",
+    "nextBroadcasts": [
+      {
+        "date": "2026-03-09",
         "startTime": "20:00"
       }
     ]
@@ -1603,6 +1586,55 @@
     ]
   },
   {
+    "title": "福寿草　「罪悪感」",
+    "url": "https://tvguide.myjcom.jp/detail/?eid=3_1754309",
+    "channel": "BS11",
+    "scheduleText": "BS11 03-10 14:29",
+    "nextBroadcasts": [
+      {
+        "date": "2026-03-10",
+        "startTime": "14:29"
+      }
+    ]
+  },
+  {
+    "title": "中国ドラマ「七時吉祥〜エンドレス・ラブ〜」",
+    "url": "https://poupe.hatenadiary.jp/entry/2023/08/11/%E3%80%8E%E4%B8%83%E6%99%82%E5%90%89%E7%A5%A5%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3",
+    "channel": "日テレプラス",
+    "scheduleText": "日テレプラス 03-10 14:30, 03-11 14:30, 04-03 04:00, 04-06 04:00, 04-07 04:00, 04-08 04:00, 04-09 04:00",
+    "nextBroadcasts": [
+      {
+        "date": "2026-03-10",
+        "startTime": "14:30"
+      },
+      {
+        "date": "2026-03-11",
+        "startTime": "14:30"
+      },
+      {
+        "date": "2026-04-03",
+        "startTime": "04:00"
+      },
+      {
+        "date": "2026-04-06",
+        "startTime": "04:00"
+      },
+      {
+        "date": "2026-04-07",
+        "startTime": "04:00"
+      },
+      {
+        "date": "2026-04-08",
+        "startTime": "04:00"
+      },
+      {
+        "date": "2026-04-09",
+        "startTime": "04:00"
+      }
+    ],
+    "blogUrl": "https://poupe.hatenadiary.jp/entry/2023/08/11/%E3%80%8E%E4%B8%83%E6%99%82%E5%90%89%E7%A5%A5%E3%80%8F_%E5%85%A8%E8%A9%B1_%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
+  },
+  {
     "title": "独孤伽羅〜皇后の願い〜　新婚初夜",
     "url": "https://tvguide.myjcom.jp/detail/?eid=3_1754651",
     "channel": "J:COM",
@@ -1916,6 +1948,18 @@
     "blogUrl": "https://poupe.hatenadiary.jp/entry/2025/08/18/%E3%80%8E%E5%AD%90%E5%A4%9C%E5%BD%92%E3%80%8F%E5%85%A8%E8%A9%B1%E3%81%82%E3%82%89%E3%81%99%E3%81%98%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%84%9F%E6%83%B3"
   },
   {
+    "title": "福寿草　「放火犯」",
+    "url": "https://tvguide.myjcom.jp/detail/?eid=3_1754782",
+    "channel": "BS11",
+    "scheduleText": "BS11 03-11 14:29",
+    "nextBroadcasts": [
+      {
+        "date": "2026-03-11",
+        "startTime": "14:29"
+      }
+    ]
+  },
+  {
     "title": "独孤伽羅〜皇后の願い〜　王妃の里帰り",
     "url": "https://tvguide.myjcom.jp/detail/?eid=3_1755441",
     "channel": "J:COM",
@@ -2121,6 +2165,18 @@
       {
         "date": "2026-03-12",
         "startTime": "11:00"
+      }
+    ]
+  },
+  {
+    "title": "福寿草　「母が抱える秘密」",
+    "url": "https://tvguide.myjcom.jp/detail/?eid=3_1755626",
+    "channel": "BS11",
+    "scheduleText": "BS11 03-12 14:29",
+    "nextBroadcasts": [
+      {
+        "date": "2026-03-12",
+        "startTime": "14:29"
       }
     ]
   },
@@ -2344,6 +2400,18 @@
       {
         "date": "2026-03-13",
         "startTime": "10:00"
+      }
+    ]
+  },
+  {
+    "title": "福寿草　「証拠品の行方」",
+    "url": "https://tvguide.myjcom.jp/detail/?eid=3_1756713",
+    "channel": "BS11",
+    "scheduleText": "BS11 03-13 14:29",
+    "nextBroadcasts": [
+      {
+        "date": "2026-03-13",
+        "startTime": "14:29"
       }
     ]
   },
@@ -2670,6 +2738,18 @@
     ]
   },
   {
+    "title": "ライン・オブ・デューティ 汚職特捜班 シーズン2",
+    "url": "https://tvguide.myjcom.jp/detail/?eid=3_1757864",
+    "channel": "BS11",
+    "scheduleText": "BS11 03-15 09:59",
+    "nextBroadcasts": [
+      {
+        "date": "2026-03-15",
+        "startTime": "09:59"
+      }
+    ]
+  },
+  {
     "title": "華◆命書執筆〜運命を書き換える恋と覚醒〜",
     "url": "https://tvguide.myjcom.jp/detail/?eid=120_17409274",
     "channel": "ホームドラマチャンネル",
@@ -2779,6 +2859,18 @@
       {
         "date": "2026-03-16",
         "startTime": "11:00"
+      }
+    ]
+  },
+  {
+    "title": "福寿草　「真犯人」",
+    "url": "https://tvguide.myjcom.jp/detail/?eid=3_1758640",
+    "channel": "BS11",
+    "scheduleText": "BS11 03-16 14:29",
+    "nextBroadcasts": [
+      {
+        "date": "2026-03-16",
+        "startTime": "14:29"
       }
     ]
   },

@@ -98,18 +98,7 @@ export function isChineseDrama(title: string): boolean {
 
     // Blocklist
     const blockList = [
-        'シカゴ', 'FBI', 'CSI', 'NCIS', 'DOC', 'ドクター', 'グッド', 'クリミナル',
-        'マダム', 'ミステリー', '事件簿', '警部', '捜査', 'ファイル', 'ブラウン神父',
-        'ヴェラ', 'ブリティッシュ', 'ベイクオフ', 'オール・ライズ', 'クローザー',
-        'ライン・オブ', 'キルミー', '彼女は', '星から', 'ミセン', 'ペク・ドンス',
-        '馬医', '福寿草', '運命の', '三番目', '三姉弟', '優雅な', '白雪姫',
-        '被告人', 'ペントハウス', '応答せよ', 'ブランディング', 'ロマンスは',
-        'チェックイン', 'ウイスキー', 'タワー', 'アルゼンチーナ', 'MURDER',
-        'シーズン', 'Season', 'ＳＩＳＩ',
-        'バラエティ', '音楽', 'ライブ',
-        'モンテ', '快楽', 'ストリッパー', 'ダイアリー', '人妻',
-        'シャロン', 'ピチ', '取調室', 'LAW', 'ORDER', 'S.W.A.T', '英国',
-        'DEATH & DETAIL', '事実は語る', '北欧サスペンス', '白夜の連続殺人', 'エンド・オブ', 'パリ',
+        'シカゴ', 'FBI', 'CSI', 'NCIS', 'DOC', 'S.W.A.T',
         'ヴィエナ・ブラッド', 'vienna blood', 'マルプラクティス'
     ];
 
@@ -262,7 +251,13 @@ export async function fetchJcomData(): Promise<DramaSchedule[]> {
                     // This is robust against Anime (70), Domestic (30), Info (FF), etc.
 
 
-                    if (p.si_genre !== '31') continue;
+                    // GENRE FILTER
+                    if (p.si_genre !== '31') {
+                        if (TARGET_CHANNELS.some(t => toHalfWidth(p.channel_name).includes(t))) {
+                             console.log(`[GENRE SKIP] ${p.title} (${p.si_genre}) channel: ${p.channel_name}`);
+                        }
+                        continue;
+                    }
 
                     // Filter Logic
                     if (!isChineseDrama(p.title)) {
