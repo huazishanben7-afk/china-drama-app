@@ -89,22 +89,22 @@ export function isChineseDrama(title: string): boolean {
     if (t.includes('華◆') || t.includes('華流') || t.includes('[中]') || t.includes('【中】')) return true;
     if (t.includes('蔵海') || t.includes('ザンハイ')) return true; // Explicitly allow Zang Hai
 
-    // Negative Indicators
-    if (t.includes('韓◆') || t.includes('韓流') || t.includes('韓国') || t.includes('[韓]') || t.includes('(韓)')) return false;
-    if (t.includes('台湾') || t.includes('タイ')) return false;
+    // Negative Indicators - Specific Korean/Taiwanese markers
+    if (t.includes('韓◆') || t.includes('韓流') || t.includes('韓国') || t.includes('[韓]') || t.includes('(韓)') || t.includes('〈韓〉')) return false;
+    if (t.includes('台◆') || t.includes('台湾') || t.includes('タイ')) return false;
 
-    // Korean Name Patterns
-    if (/(?:チャン|イ|キム|ハン|パク|ユ|シン|カン|チョン|ソン|ジュ|ミン|ソ|オ|ク|コ|チ|ハ)・/.test(t)) return false;
-
-    // Blocklist
+    // Specific Korean/Non-Chinese titles reported by user or common in results
     const blockList = [
+        '福寿草', 'ペントハウス', '復讐の花束をあなたに', '紳士とお嬢さん', '三姉弟', '優雅な家',
         'シカゴ', 'FBI', 'CSI', 'NCIS', 'DOC', 'S.W.A.T',
         'ヴィエナ・ブラッド', 'vienna blood', 'マルプラクティス'
     ];
-
     if (blockList.some(k => t.includes(k))) return false;
 
-    // Kana Filter
+    // Korean Name Patterns in titles (e.g., "チャン・ヒョク")
+    if (/(?:チャン|イ|キム|ハン|パク|ユ|シン|カン|チョン|ソン|ジュ|ミン|ソ|オ|ク|コ|チ|ハ)・/.test(t)) return false;
+
+    // Kana Filter (Too much Katakana usually means Western or Korean names)
     const kanaOnly = t.replace(/[^\u3040-\u309F\u30A0-\u30FFー\s]/g, '');
     if (t.length > 5 && kanaOnly.length > t.length * 0.8) return false;
 
