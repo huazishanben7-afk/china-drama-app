@@ -88,8 +88,8 @@ export default function SchedulePage() {
         fetchSchedule();
     }, []);
 
-    // ユニークなチャンネルリストを作成
-    const channels = Array.from(new Set(events.map(e => e.channel))).sort();
+    // ユニークなチャンネルリストを作成（フィルタリング前の全データから抽出）
+    const channels = Array.from(new Set(schedules.map(e => e.channel))).sort();
 
     // フィルタリングされたイベント
     const filteredEvents = selectedChannel
