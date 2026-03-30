@@ -50,5 +50,5 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add public/data/drama_schedule.json public/data/schedule.csv
-          git commit -m "chore(data): update drama schedule [skip ci]"
+          git commit -m "chore(data): update drama schedule"
           git push
