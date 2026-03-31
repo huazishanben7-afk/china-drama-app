@@ -97,7 +97,7 @@ export function isChineseDrama(title: string): boolean {
     const blockList = [
         '福寿草', 'ペントハウス', '復讐の花束をあなたに', '紳士とお嬢さん', '三姉弟', '優雅な家',
         'シカゴ', 'FBI', 'CSI', 'NCIS', 'DOC', 'S.W.A.T',
-        'ヴィエナ・ブラッド', 'vienna blood', 'マルプラクティス'
+        'ヴィエナ・ブラッド', 'vienna blood', 'マルプラクティス', 'ヴェラ'
     ];
     if (blockList.some(k => t.includes(k))) return false;
 
@@ -254,7 +254,7 @@ export async function fetchJcomData(): Promise<DramaSchedule[]> {
                     // GENRE FILTER
                     if (p.si_genre !== '31') {
                         if (TARGET_CHANNELS.some(t => toHalfWidth(p.channel_name).includes(t))) {
-                             console.log(`[GENRE SKIP] ${p.title} (${p.si_genre}) channel: ${p.channel_name}`);
+                            console.log(`[GENRE SKIP] ${p.title} (${p.si_genre}) channel: ${p.channel_name}`);
                         }
                         continue;
                     }
