@@ -3,6 +3,7 @@ import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
 import qs from 'querystring';
+import * as cheerio from 'cheerio';
 // We keep re-using types from crawl_bangumi locally to avoid import errors if file missing
 // But for now let's define them here to be self-contained or trust existing structure.
 import { DramaSchedule } from './crawl_bangumi';
@@ -46,37 +47,184 @@ interface JcomSearchItem {
     };
     si_genre: string;
 }
+// ============================================================
+// Blog index built from category page (faster, more reliable)
+// ============================================================
+const BLOG_CATEGORY_URL = 'https://poupe.hatenadiary.jp/archive/category/%E8%8F%AF%E6%B5%81%E3%83%89%E3%83%A9%E3%83%9E%E3%81%BE%E3%81%A8%E3%82%81';
 
-interface BlogData {
+interface BlogEntry {
     title: string;
-    blogUrl: string;
+    url: string;
 }
 
-const CSV_FILE = path.join(process.cwd(), 'public', 'data', 'drama_database_v2.csv');
+let blogIndex: BlogEntry[] | null = null;
 
-function loadBlogData(): BlogData[] {
-    try {
-        if (!fs.existsSync(CSV_FILE)) return [];
-        const fileContent = fs.readFileSync(CSV_FILE, 'utf-8');
-        const lines = fileContent.split('\n');
-        const data: BlogData[] = [];
-        for (let i = 1; i < lines.length; i++) {
-            const line = lines[i].trim();
-            if (!line) continue;
-            const cols = line.split(',');
-            if (cols.length >= 2 && cols[1] && cols[1].startsWith('http')) {
-                data.push({
-                    title: cols[0].trim(),
-                    blogUrl: cols[1].trim()
-                });
-            }
+async function loadBlogIndex(): Promise<BlogEntry[]> {
+    if (blogIndex !== null) return blogIndex;
+
+    console.log('[Blog] Building index from category page...');
+    const entries: BlogEntry[] = [];
+    let url: string | null = BLOG_CATEGORY_URL;
+    let page = 1;
+
+    while (url) {
+        try {
+            await new Promise(r => setTimeout(r, 800));
+            const response = await axios.get(url, {
+                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+                timeout: 10000
+            });
+            const $ = cheerio.load(response.data);
+            $('a.entry-title-link').each((i, el) => {
+                const title = $(el).text().trim();
+                const href = $(el).attr('href');
+                if (title && href) entries.push({ title, url: href });
+            });
+
+            url = null;
+            $('a[rel=next]').each((i, el) => { url = $(el).attr('href') || null; });
+            page++;
+        } catch (e: any) {
+            console.warn(`[Blog] Index fetch failed at page ${page}: ${e.message}`);
+            break;
         }
-        return data;
-    } catch (error) {
-        console.warn('Failed to load CSV file:', error);
-        return [];
     }
+
+    console.log(`[Blog] Index built: ${entries.length} summary articles found.`);
+    blogIndex = entries;
+    return entries;
 }
+
+// Extract a clean search keyword from the raw schedule title (for local matching)
+function extractSearchKeyword(rawTitle: string): string {
+    let t = rawTitle;
+
+    // Remove leading flags like [新], [初], [中], [無], [再], [終]
+    t = t.replace(/^\[(?:新|初|中|無|再|終)\]\s*/, '');
+    
+    // Remove leading 【字】, 【字幕】 etc.
+    t = t.replace(/^【.*?】\s*/, '');
+
+    // Remove leading genre/flag prefixes
+    t = t.replace(/^中国時代劇[\s　]+/, '');
+    t = t.replace(/^時代劇[\s　]+/, '');
+    t = t.replace(/^(?:日本初◆|TV初◆|初◆|TV再◆|再◆)?中国ドラマ「(.*?)」.*$/, '$1');
+    t = t.replace(/^(?:日本初◆|TV初◆|初◆|TV再◆|再◆)?中国ドラマ[\s　]+/, '');
+    t = t.replace(/^中国[◆◇●○＊★☆■□]/, '');
+    t = t.replace(/^[華古装近代][◆◇●○＊★☆■□]/, '');
+    t = t.replace(/^【中国時代劇】[\s　]*/, '');
+    
+    // Remove leading episode number like #33, ＃33, (終)
+    t = t.replace(/^(?:＃|#)[0-9０-９]+[\s　]+/, '');
+    t = t.replace(/^\(終\)[\s　]+/, '');
+
+    // Remove trailing cast hints after ▼
+    t = t.replace(/[\s　]*▼.*$/, '');
+
+    // Remove trailing (全○話) total episode count
+    t = t.replace(/[\s　]*[\(（]全[0-9０-９]+話[\)）].*$/, '');
+
+    // Remove trailing episode range like 〜3, 〜12
+    t = t.replace(/[〜～][０-９0-9]+$/, '');
+    t = t.replace(/〜[一二三四五六七八九十百]+$/, '');
+
+    // Remove trailing 「subtitles」
+    t = t.replace(/[\s　]*[「『].*?[」』]$/, '');
+
+    // Remove ruby text （せいめいじょうかず） etc.
+    t = t.replace(/（[ぁ-んァ-ン]+）/g, '');
+    t = t.replace(/\([ぁ-んァ-ン]+\)/g, '');
+
+    // Remove <字> ＜字幕＞ [字] etc.
+    t = t.replace(/[\s　]*[\[\[[][^\]\]]*[\]\]]]/g, '');
+    t = t.replace(/[\s　]*[<＜][^>＞]*[>＞]/g, '');
+    
+    // Remove 【日本初放送】 【アンコール】 etc.
+    t = t.replace(/[\s　]*【[^】]+】/g, '');
+    
+    // Remove ◆キャスト名
+    t = t.replace(/[\s　]*◆.*$/, '');
+    
+    // Remove (字幕版), (吹替版) etc.
+    t = t.replace(/[\s　]*\([^)]*(?:字幕|吹替|版|話)[^)]*\)/g, '');
+    t = t.replace(/[\s　]*（[^）]*(?:字幕|吹替|版|話)[^）]*）/g, '');
+
+    // Remove after colon or wave dash or normal/full-width dashes (subtitles)
+    t = t.split(/[：:〜～\-−—–－]/)[0];
+
+    // Remove episode markers
+    t = t.replace(/[\s　]*(?:第|＃|#)?[0-9０-９]+話.*/g, '');
+
+    // Normalize full-width to half-width
+    t = t.replace(/[！-～]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0));
+    t = t.replace(/　/g, ' ').replace(/ +/g, ' ').trim();
+
+    // Second pass after normalization
+    t = t.replace(/\s*\[[^\]]*\]/g, '');
+    t = t.replace(/\s*#[0-9]+\s*$/g, '');
+    t = t.replace(/\s*一挙放送\s*$/g, '');
+    t = t.trim();
+
+    return t;
+}
+
+// Normalize a blog article title for matching
+function normalizeBlogTitle(title: string): string {
+    return title
+        .replace(/[『』「」【】\[\]【】]/g, '')  // strip brackets
+        .replace(/[！-～]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))  // full-width to half-width
+        .replace(/〜/g, '~')   // wave dash 〜 -> ~
+        .replace(/[<＜][^>\uff1e]*[>＞]/g, '') // remove <reading> annotations
+        .replace(/\s+/g, '')
+        .toLowerCase();
+}
+
+async function searchBlogForDrama(rawTitle: string): Promise<string | null> {
+    const searchKeyword = extractSearchKeyword(rawTitle);
+    if (!searchKeyword || searchKeyword.length < 2) return null;
+
+    const index = await loadBlogIndex();
+    const normalizedKeyword = searchKeyword
+        .replace(/[！-～]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))  // full-width to half-width
+        .replace(/〜/g, '~')   // wave dash 〜 -> ~
+        .replace(/[<\uff1c][^>\uff1e]*[>\uff1e]/g, '') // remove <reading> annotations
+        .replace(/\s+/g, '').toLowerCase();
+
+    // Find all entries whose title matches
+    const matches = index.filter(entry => {
+        const normalizedTitle = normalizeBlogTitle(entry.title);
+        // Check if blog title contains the drama keyword, or vice versa (for short drama names)
+        const titleCore = normalizedTitle.replace(/全話あらすじネタバレ感想/g, '').replace(/全話/g, '');
+        return normalizedTitle.includes(normalizedKeyword) || 
+               (normalizedKeyword.length >= 2 && normalizedKeyword.includes(titleCore) && titleCore.length >= 2);
+    });
+
+    if (matches.length > 0) {
+        // Score matches to find the best one
+        // Rank 1: Blog title contains the full keyword (strong match)
+        // Rank 2: Keyword contains the blog title (weak match, usually means blog title is just the short main title)
+        matches.sort((a, b) => {
+            const aTitle = normalizeBlogTitle(a.title);
+            const bTitle = normalizeBlogTitle(b.title);
+            const aStrong = aTitle.includes(normalizedKeyword);
+            const bStrong = bTitle.includes(normalizedKeyword);
+            
+            if (aStrong && !bStrong) return -1;
+            if (!aStrong && bStrong) return 1;
+            
+            // If same rank, sort by length (shortest wins to avoid sequels/compilations when searching for season 1)
+            return aTitle.length - bTitle.length;
+        });
+        
+        const bestMatch = matches[0];
+        console.log(`[Blog Match] ${rawTitle} -> ${bestMatch.url} (out of ${matches.length} matches)`);
+        return bestMatch.url;
+    }
+
+    return null;
+}
+
+
 
 export function isChineseDrama(title: string): boolean {
     const t = title;
@@ -122,6 +270,15 @@ function normalizeTitle(fullTitle: string): string {
     title = title.replace(/[\s　]+(第|＃|#)?[0-9０-９]+(?:話|)/g, '');
     title = title.replace(/(第|＃|#)[0-9０-９]+(?:話|)/g, '');
     title = title.replace(/[\s　]*（.*?）$/, '').replace(/[\s　]*＜.*?＞$/, '').replace(/[\s　]*\(.*?\)$/, '');
+    
+    // Remove trailing flags like 「最終回」 only if preceded by a space
+    title = title.replace(/[\s　]+[「『][^」』]+[」』]$/, '');
+    
+    // Remove ruby text like （せいめいじょうかず） anywhere
+    title = title.replace(/（[ぁ-んァ-ン]+）/g, ''); 
+    title = title.replace(/\([ぁ-んァ-ン]+\)/g, '');
+
+    // Unwrap if the ENTIRE remaining string is wrapped in quotes
     title = title.replace(/^[「『](.*?)[」』]$/, '$1');
     title = title.replace(/^PR\s+/, '');
     return title.trim();
@@ -156,19 +313,7 @@ function normalizeChannelName(raw: string): string {
     return c;
 }
 
-function findBlogEntry(title: string, blogData: BlogData[]): BlogData | undefined {
-    // Normalization for matching: remove spaces, lowercase
-    const t1 = title.replace(/[\s　・～〜<\(（\[【]/g, '').toLowerCase();
-    // Simplified matching: check if core title part matches
-    if (!t1 || t1.length < 2) return undefined;
-
-    return blogData.find(b => {
-        const t2 = b.title.replace(/[\s　・～〜<\(（\[【]/g, '').toLowerCase();
-        if (!t2) return false;
-        // Check partial match
-        return t1.includes(t2) || t2.includes(t1);
-    });
-}
+// CSV based findBlogEntry removed.
 
 function formatDateStr(dateStr: string): { date: string, startTime: string } {
     // input: "2026-01-03 13:45:00.000000"
@@ -212,10 +357,8 @@ async function fetchWithRetry(url: string, data: any, retries = MAX_RETRIES): Pr
 }
 
 export async function fetchJcomData(): Promise<DramaSchedule[]> {
-    console.log('Starting J:COM crawl (Multi-Keyword Search Mode)...');
+    console.log('Starting J:COM crawl (Multi-Keyword Search Mode with Blog Scraping)...');
     const schedules: DramaSchedule[] = [];
-    const blogDataList = loadBlogData();
-    console.log(`Loaded ${blogDataList.length} blog entries for matching.`);
 
     const visitedIds = new Set<string>();
 
@@ -271,16 +414,16 @@ export async function fetchJcomData(): Promise<DramaSchedule[]> {
                     const normalizedTitle = normalizeTitle(p.title);
 
                     if (p.title.includes('蔵海')) {
-                        console.log(`[FOUND ZANGHAI] ${p.title} -> ${normalizedTitle} (MATCH BLOG? ${!!findBlogEntry(normalizedTitle, blogDataList)})`);
+                        console.log(`[FOUND ZANGHAI] ${p.title} -> ${normalizedTitle}`);
                     }
 
                     // Check duplicate objects logic (same title/channel)
                     let drama = schedules.find(d => d.title === normalizedTitle && d.channel === displayChannel);
 
                     if (!drama) {
-                        const blogEntry = findBlogEntry(normalizedTitle, blogDataList);
-                        const targetUrl = blogEntry
-                            ? blogEntry.blogUrl
+                        const blogUrl = await searchBlogForDrama(p.title);
+                        const targetUrl = blogUrl
+                            ? blogUrl
                             : `https://tvguide.myjcom.jp/detail/?eid=${p.cid}`;
 
                         drama = {
@@ -289,7 +432,7 @@ export async function fetchJcomData(): Promise<DramaSchedule[]> {
                             channel: displayChannel,
                             scheduleText: '',
                             nextBroadcasts: [],
-                            blogUrl: blogEntry?.blogUrl
+                            blogUrl: blogUrl || undefined
                         };
                         schedules.push(drama);
                     }
